@@ -442,7 +442,8 @@ nav .bar-chart {
 
 .hero-content h1 {
   font-size: 3rem;
-  margin-bottom: var(--sp-10);
+  font-weight: 700;
+  margin-bottom: var(--sp-25);
   font-family: var(--font-main);
 }
 
