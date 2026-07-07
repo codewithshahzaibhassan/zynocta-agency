@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms &amp; Conditions</title>
+    <style>
+        /* ──────────── Reset & Base ──────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eaf3fc;
+            /* light blue wash */
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0;
+            /* NO body padding */
+            color: #0e2a44;
+        }
+
+        /* ──────────── Full‑width wrapper (no radius) ──────────── */
+        .terms-wrapper {
+            width: 100%;
+            max-width: 100%;
+            background: #ffffff;
+            box-shadow: 0 8px 40px rgba(20, 60, 140, 0.06);
+            border: none;
+            border-radius: 0;
+            /* NO radius */
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ──────────── Home Button (top‑left, inside wrapper) ──────────── */
+        .home-btn {
+            position: absolute;
+            top: 1.8rem;
+            left: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.4rem 0.6rem 1.1rem;
+            background: rgba(220, 238, 255, 0.75);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(50, 120, 220, 0.20);
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1a3f7a;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(30, 70, 150, 0.06);
+            transition: all 0.25s ease;
+            z-index: 20;
+            letter-spacing: 0.2px;
+        }
+
+        .home-btn .arrow {
+            font-size: 1.15rem;
+            line-height: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(40, 110, 230, 0.45);
+            box-shadow: 0 4px 18px rgba(30, 70, 180, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .home-btn:hover .arrow {
+            transform: translateX(-5px);
+        }
+
+        .home-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ──────────── Content Area ──────────── */
+        .terms-content {
+            padding: 5.5rem 3.5rem 3.5rem 3.5rem;
+            /* top padding makes room for home btn */
+            flex: 1;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ──────────── Header (different layout) ──────────── */
+        .terms-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 2px solid rgba(40, 110, 220, 0.08);
+            flex-wrap: wrap;
+        }
+
+        .terms-header .icon-badge {
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #d4e6ff, #b6d2fc);
+            padding: 0.9rem 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: none;
+            border-radius: 0;
+            /* NO radius */
+            box-shadow: inset 0 -2px 0 rgba(30, 80, 180, 0.10);
+        }
+
+        .terms-header .icon-badge svg {
+            width: 32px;
+            height: 32px;
+            fill: #0a3470;
+        }
+
+        .terms-header .icon-badge span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0a3470;
+            letter-spacing: 0.5px;
+        }
+
+        .terms-header .title-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .terms-header .title-group h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #06224a;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .terms-header .title-group .sub {
+            font-size: 1rem;
+            color: #4a6e9e;
+            margin-top: 0.2rem;
+            font-weight: 400;
+        }
+
+        .terms-header .meta-badge {
+            flex-shrink: 0;
+            background: #e7f0fb;
+            padding: 0.5rem 1.4rem;
+            border: none;
+            border-radius: 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1a4a7a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            align-self: center;
+            border-left: 3px solid #3a8aff;
+        }
+
+        /* ──────────── Grid Layout (different from cookie) ──────────── */
+        .terms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .terms-grid .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .term-block {
+            background: #f7faff;
+            padding: 1.6rem 1.8rem;
+            border: none;
+            border-radius: 0;
+            border-bottom: 3px solid rgba(40, 110, 220, 0.12);
+            transition: background 0.2s ease;
+        }
+
+        .term-block:hover {
+            background: #f2f8ff;
+        }
+
+        .term-block h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0a2a5a;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .term-block h2 .step {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #d4e6ff;
+            color: #0a3470;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.1rem 0.7rem;
+            border: none;
+            border-radius: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .term-block p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #1a3456;
+        }
+
+        .term-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+
+        .term-block ul li {
+            font-size: 0.93rem;
+            line-height: 1.6;
+            color: #1a3456;
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            border-bottom: 1px solid rgba(40, 110, 220, 0.04);
+        }
+
+        .term-block ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3a8aff;
+            font-weight: 600;
+        }
+
+        .term-block ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ──────────── Highlight / Notice (full width) ──────────── */
+        .notice-block {
+            background: #e3effb;
+            padding: 1.8rem 2.2rem;
+            border: none;
+            border-radius: 0;
+            border-left: 5px solid #2a7aff;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 0.2rem;
+        }
+
+        .notice-block .notice-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            color: #1a5acf;
+        }
+
+        .notice-block p {
+            flex: 1;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #0a2a5a;
+            font-weight: 450;
+        }
+
+        .notice-block p strong {
+            color: #003399;
+        }
+
+        /* ──────────── Action Bar ──────────── */
+        .terms-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2.8rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(40, 110, 220, 0.06);
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem 2.2rem;
+            border: none;
+            border-radius: 0;
+            /* NO radius */
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: #1a5adf;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(30, 90, 220, 0.25);
+            border-bottom: 3px solid #0e3d9e;
+        }
+
+        .btn-primary:hover {
+            background: #2a6aef;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(30, 90, 220, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-secondary {
+            background: rgba(230, 242, 255, 0.8);
+            color: #1a3f7a;
+            border: 1px solid rgba(40, 110, 220, 0.15);
+            border-bottom: 3px solid rgba(40, 110, 220, 0.10);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(40, 110, 220, 0.30);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.97);
+        }
+
+        .btn .icon {
+            font-size: 1.1rem;
+        }
+
+        /* ──────────── Toast ──────────── */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #0a2a5a;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            pointer-events: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-left: 4px solid #5a9aff;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast .toast-icon {
+            font-size: 1.2rem;
+        }
+
+        /* ──────────── Responsive ──────────── */
+        @media (max-width: 992px) {
+            .terms-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .terms-content {
+                padding: 5rem 2.5rem 2.5rem 2.5rem;
+            }
+
+            .terms-header .title-group h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .terms-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .terms-content {
+                padding: 4.5rem 1.5rem 2rem 1.5rem;
+            }
+
+            .home-btn {
+                top: 1.2rem;
+                left: 1.2rem;
+                padding: 0.4rem 1rem 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                gap: 0.3rem;
+            }
+
+            .home-btn .arrow {
+                font-size: 1rem;
+            }
+
+            .terms-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .terms-header .icon-badge {
+                align-self: flex-start;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .terms-header .meta-badge {
+                align-self: flex-start;
+                border-left: 3px solid #3a8aff;
+                padding: 0.3rem 1rem;
+            }
+
+            .terms-header .title-group h1 {
+                font-size: 1.8rem;
+            }
+
+            .term-block {
+                padding: 1.2rem 1.4rem;
+            }
+
+            .notice-block {
+                padding: 1.2rem 1.4rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .terms-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.7rem 1.5rem;
+            }
+
+            .toast {
+                width: calc(100% - 2rem);
+                bottom: 1rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-content {
+                padding: 4rem 1rem 1.5rem 1rem;
+            }
+
+            .home-btn {
+                top: 0.9rem;
+                left: 0.9rem;
+                padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+                font-size: 0.7rem;
+                gap: 0.2rem;
+            }
+
+            .home-btn .arrow {
+                font-size: 0.85rem;
+            }
+
+            .terms-header .title-group h1 {
+                font-size: 1.5rem;
+            }
+
+            .terms-header .icon-badge svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            .terms-header .icon-badge span {
+                font-size: 0.9rem;
+            }
+
+            .term-block h2 {
+                font-size: 1rem;
+            }
+
+            .term-block p,
+            .term-block ul li,
+            .notice-block p {
+                font-size: 0.88rem;
+            }
+
+            .term-block {
+                padding: 1rem 1rem;
+            }
+
+            .notice-block {
+                padding: 1rem 1rem;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .toast {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* ──────────── Utility ──────────── */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── TOAST ─── -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Preference saved</span>
+    </div>
+
+    <!-- ─── FULL‑WIDTH WRAPPER (no radius) ─── -->
+    <div class="terms-wrapper">
+
+        <!-- Home Button (top‑left) -->
+        <a href="index.html" class="home-btn" id="homeBtn" aria-label="Go to homepage">
+            <span class="arrow">  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>Home</span>
+        </a>
+
+        <!-- ─── Content ─── -->
+        <div class="terms-content">
+
+            <!-- Header (different layout) -->
+            <div class="terms-header">
+                <div class="icon-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+                    </svg>
+                    <span>Terms</span>
+                </div>
+                <div class="title-group">
+                    <h1>Terms &amp; Conditions</h1>
+                    <p class="sub">Read carefully – these terms govern your use of our services.</p>
+                </div>
+                <div class="meta-badge">
+                    <span>📄</span> v2.4 · <span id="updateDate">2026</span>
+                </div>
+            </div>
+
+            <!-- ─── Grid Layout ─── -->
+            <div class="terms-grid">
+
+                <!-- Block 1 -->
+                <div class="term-block">
+                    <h2><span class="step">01</span> Acceptance of Terms</h2>
+                    <p>By accessing or using our platform, you agree to be bound by these Terms &amp; Conditions. If you do not agree, please do not use our services.</p>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="term-block">
+                    <h2><span class="step">02</span> User Accounts</h2>
+                    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                    <ul>
+                        <li>You must be at least 18 years old.</li>
+                        <li>Provide accurate and complete information.</li>
+                    </ul>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="term-block">
+                    <h2><span class="step">03</span> Intellectual Property</h2>
+                    <p>All content, trademarks, and data on this site are owned by us or our licensors. You may not reproduce, distribute, or create derivative works without explicit permission.</p>
+                </div>
+
+                <!-- Block 4 -->
+                <div class="term-block">
+                    <h2><span class="step">04</span> User Conduct</h2>
+                    <p>You agree not to engage in any activity that disrupts or interferes with our services, including but not limited to:</p>
+                    <ul>
+                        <li>Uploading malicious code or viruses.</li>
+                        <li>Attempting to gain unauthorized access.</li>
+                        <li>Harassing or abusing other users.</li>
+                    </ul>
+                </div>
+
+                <!-- Block 5 (full width) -->
+                <div class="term-block full-width">
+                    <h2><span class="step">05</span> Limitation of Liability</h2>
+                    <p>To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising from your use of our services. Our total liability is limited to the amount paid by you, if any.</p>
+                </div>
+
+                <!-- Block 6 (full width) -->
+                <div class="term-block full-width">
+                    <h2><span class="step">06</span> Governing Law &amp; Disputes</h2>
+                    <p>These Terms are governed by the laws of [Your Jurisdiction]. Any disputes shall be resolved exclusively in the courts of [Your Jurisdiction].</p>
+                </div>
+
+                <!-- Notice Block (full width) -->
+                <div class="notice-block full-width">
+                    <span class="notice-icon">⚡</span>
+                    <p>
+                        <strong>Important:</strong> We may update these Terms from time to time.
+                        The latest version will always be posted here. Continued use of our
+                        services after changes constitutes your acceptance of the updated Terms.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ─── Actions ─── -->
+            <div class="terms-actions">
+                <button class="btn btn-primary" id="acceptBtn">
+                    <span class="icon">✓</span> I Agree
+                </button>
+                <button class="btn btn-secondary" id="declineBtn">
+                    <span class="icon">✕</span> Decline
+                </button>
+                <button class="btn btn-secondary" id="printBtn">
+                    <span class="icon">🖨</span> Print
+                </button>
+                <span style="margin-left: auto; font-size: 0.8rem; color: #6a8aaa;">
+                    Last reviewed: <span id="reviewDate">today</span>
+                </span>
+            </div>
+
+        </div>
+        <!-- end terms-content -->
+
+    </div>
+    <!-- end terms-wrapper -->
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── DOM refs ───
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            const acceptBtn = document.getElementById('acceptBtn');
+            const declineBtn = document.getElementById('declineBtn');
+            const printBtn = document.getElementById('printBtn');
+            const homeBtn = document.getElementById('homeBtn');
+
+            let toastTimer = null;
+
+            // ─── Toast helper ───
+            function showToast(message, icon = '✓') {
+                if (toastTimer) {
+                    clearTimeout(toastTimer);
+                    toast.classList.remove('show');
+                }
+                void toast.offsetWidth;
+                toastMsg.textContent = message;
+                const iconEl = toast.querySelector('.toast-icon');
+                if (iconEl) iconEl.textContent = icon;
+                toast.classList.add('show');
+                toastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                    toastTimer = null;
+                }, 2800);
+            }
+
+            // ─── Handlers ───
+            function handleAccept() {
+                showToast('Terms accepted. Thank you!', '✓');
+            }
+
+            function handleDecline() {
+                showToast('You declined the Terms.', '✕');
+            }
+
+            function handlePrint() {
+                showToast('Preparing print view…', '🖨');
+                // simulate print
+                setTimeout(() => {
+                    // window.print();
+                }, 400);
+            }
+
+            function handleHome() {
+                window.location.href = 'index.html';
+            }
+
+            // ─── Events ───
+            acceptBtn.addEventListener('click', handleAccept);
+            declineBtn.addEventListener('click', handleDecline);
+            printBtn.addEventListener('click', handlePrint);
+            homeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleHome();
+            });
+
+            // ─── Dynamic dates ───
+            const updateEl = document.getElementById('updateDate');
+            const reviewEl = document.getElementById('reviewDate');
+            if (updateEl) {
+                const now = new Date();
+                updateEl.textContent = now.getFullYear();
+            }
+            if (reviewEl) {
+                const now = new Date();
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ];
+                reviewEl.textContent = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+            }
+
+            // ─── ESC dismiss toast ───
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                    if (toastTimer) {
+                        clearTimeout(toastTimer);
+                        toastTimer = null;
+                    }
+                }
+            });
+
+            console.log('📄 Terms & Conditions – full width, 0 radius, responsive.');
+        })();
+    </script>
+
+</body>
+</html>

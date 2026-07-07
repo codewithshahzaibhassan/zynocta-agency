@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Zynocta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1321;
+    --ink-soft:#414a5e;
+    --muted:#6b7280;
+    --paper:#f5f8fc;
+    --white:#ffffff;
+    --line:#dde6f2;
+    --teal:#2563eb;
+    --teal-dark:#1d4ed8;
+    --teal-tint:#e7f0fe;
+    --violet:#38bdf8;
+    --violet-tint:#e0f6ff;
+    --coral:#6366f1;
+    --coral-tint:#ecebfe;
+    --amber:#f5a623;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 10px 30px -14px rgba(13,19,33,.15);
+    --shadow-lg:0 26px 60px -22px rgba(13,19,33,.25);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;margin:0;letter-spacing:-0.01em;color:var(--ink);}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  p{margin:0;line-height:1.7;color:var(--ink-soft);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:0;}
+
+  /* ---------- HOME BUTTON ---------- */
+  .home-btn{
+    position:fixed;top:24px;left:24px;z-index:200;
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    color:var(--ink);padding:11px 22px 11px 14px;border-radius:100px;
+    font-weight:600;font-size:14.5px;
+    border:1px solid rgba(255,255,255,.6);
+    box-shadow:0 8px 24px -8px rgba(13,19,33,.18), inset 0 1px 0 rgba(255,255,255,.6);
+    transition:all .35s cubic-bezier(.2,.8,.2,1);
+    overflow:hidden;
+  }
+  .home-btn::before{
+    content:'';position:absolute;inset:0;border-radius:100px;padding:1.5px;
+    background:linear-gradient(135deg, var(--teal), var(--violet));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    opacity:0;transition:opacity .35s ease;pointer-events:none;
+  }
+  .home-btn:hover{background:var(--white);transform:translateY(-3px);box-shadow:0 16px 34px -10px rgba(14,165,165,.35), inset 0 1px 0 rgba(255,255,255,.8);}
+  .home-btn:hover::before{opacity:1;}
+  .home-btn:active{transform:translateY(-1px) scale(.98);}
+  .home-btn-icon{
+    display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;
+    background:linear-gradient(135deg, var(--teal), var(--teal-dark));color:#fff;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+    box-shadow:0 4px 10px -2px rgba(14,165,165,.5);
+  }
+  .home-btn:hover .home-btn-icon{transform:translateX(-4px) rotate(-8deg);}
+  .home-btn:hover span:last-child{background:linear-gradient(90deg, var(--teal-dark), var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  @media (max-width:480px){.home-btn{top:16px;left:16px;padding:9px 18px 9px 10px;font-size:13.5px;}}
+  @media (max-width:380px){
+    .badge-pill{font-size:11px;padding:7px 12px;}
+    .hero h1{font-size:26px;}
+    .hero p.lead{font-size:15px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:clamp(88px,14vw,120px) 0 clamp(48px,8vw,72px);text-align:center;position:relative;overflow:hidden;}
+  .hero::before{
+    content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+    width:820px;height:520px;border-radius:50%;
+    background:radial-gradient(ellipse at 30% 50%, rgba(37,99,235,.16), transparent 60%),
+               radial-gradient(ellipse at 75% 40%, rgba(56,189,248,.16), transparent 55%);
+    pointer-events:none;
+  }
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--teal-tint);color:var(--teal-dark);
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.03em;
+    padding:8px 16px;border-radius:100px;margin-bottom:24px;
+  }
+  .badge-pill .lock{width:14px;height:14px;}
+  .hero h1{font-size:clamp(32px,5.2vw,52px);line-height:1.08;max-width:760px;margin:0 auto 20px;position:relative;}
+  .hero h1 span{color:var(--teal);}
+  .hero p.lead{max-width:560px;margin:0 auto 40px;font-size:17px;position:relative;}
+  .trust-strip{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;position:relative;}
+  .trust-strip .item{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;color:var(--ink-soft);}
+  .trust-strip .item svg{width:17px;height:17px;color:var(--teal);flex-shrink:0;}
+  .trust-strip .item:nth-child(2) svg{color:var(--violet);}
+  .trust-strip .item:nth-child(3) svg{color:var(--coral);}
+  @media (max-width:480px){.trust-strip{gap:16px 24px;}.trust-strip .item{font-size:12.5px;}}
+
+  /* ---------- LAYOUT: sidebar + content ---------- */
+  .policy-layout{
+    display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;
+    max-width:var(--maxw);margin:0 auto;padding:0 24px clamp(56px,10vw,100px);
+    align-items:start;
+  }
+  @media (max-width:960px){.policy-layout{grid-template-columns:minmax(0,1fr);gap:28px;padding:0 20px 56px;}}
+  @media (max-width:480px){.policy-layout{padding:0 16px 40px;}}
+
+  .toc{position:sticky;top:100px;min-width:0;}
+  .toc-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .toc-card h5{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:14px;font-weight:500;}
+  .toc-card a{
+    display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;
+    font-size:14px;font-weight:500;color:var(--ink-soft);margin-bottom:2px;
+    transition:all .2s ease;
+  }
+  .toc-card a .num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);width:18px;flex-shrink:0;}
+  .toc-card a:hover, .toc-card a.active{background:var(--teal-tint);color:var(--teal-dark);}
+  .toc-card a:hover .num, .toc-card a.active .num{color:var(--teal-dark);}
+  @media (max-width:960px){
+    .toc{position:static;margin-bottom:8px;}
+    .toc-card{display:flex;overflow-x:auto;gap:6px;padding:12px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;}
+    .toc-card h5{display:none;}
+    .toc-card a{white-space:nowrap;margin-bottom:0;scroll-snap-align:start;font-size:13.5px;padding:8px 12px;}
+    .toc-card::-webkit-scrollbar{height:4px;}
+    .toc-card::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px;}
+  }
+
+  .content-col{display:flex;flex-direction:column;gap:clamp(40px,7vw,64px);min-width:0;}
+  .policy-section{scroll-margin-top:100px;}
+  .policy-section .sec-eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal-dark);letter-spacing:.05em;
+    text-transform:uppercase;display:block;margin-bottom:10px;font-weight:500;
+  }
+  .policy-section h2{font-size:clamp(21px,2.8vw,30px);margin-bottom:16px;word-break:break-word;}
+  .policy-section > p{font-size:15.5px;margin-bottom:20px;max-width:680px;}
+
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+  @media (max-width:760px){.info-grid{grid-template-columns:1fr;}}
+  .info-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal);}
+  .info-card:nth-child(2):hover{border-color:var(--violet);}
+  .info-card:nth-child(3):hover{border-color:var(--coral);}
+  .info-card .ic{
+    width:38px;height:38px;border-radius:10px;background:var(--teal-tint);color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .info-card:nth-child(2) .ic{background:var(--violet-tint);color:var(--violet);}
+  .info-card:nth-child(3) .ic{background:var(--coral-tint);color:var(--coral);}
+  .info-card h4{font-size:15.5px;margin-bottom:8px;}
+  .info-card p{font-size:13.5px;}
+
+  .use-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:var(--white);}
+  .use-row{display:flex;gap:16px;padding:18px 20px;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .use-row:last-child{border-bottom:none;}
+  .use-row .mono-tag{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--violet);background:var(--violet-tint);
+    padding:4px 9px;border-radius:6px;flex-shrink:0;margin-top:2px;
+  }
+  .use-row p{font-size:14.5px;}
+  @media (max-width:420px){
+    .use-row{gap:10px;padding:16px;}
+    .use-row .mono-tag{font-size:10.5px;padding:3px 7px;}
+  }
+
+  /* cookie panel (signature interactive) */
+  .cookie-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,4vw,28px);box-shadow:var(--shadow);}
+  .cookie-row{
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    padding:18px 4px;border-bottom:1px solid var(--line);
+  }
+  .cookie-row:last-of-type{border-bottom:none;}
+  .cookie-row h4{font-size:15px;margin-bottom:4px;}
+  .cookie-row p{font-size:13px;max-width:420px;}
+  @media (max-width:520px){
+    .cookie-row{gap:14px;}
+    .cookie-row p{font-size:12.5px;}
+  }
+  .switch{position:relative;width:46px;height:26px;flex-shrink:0;}
+  .switch input{opacity:0;width:0;height:0;}
+  .slider{
+    position:absolute;inset:0;background:var(--line);border-radius:100px;cursor:pointer;transition:background .25s ease;
+  }
+  .slider::before{
+    content:'';position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1);box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  input:checked + .slider{background:var(--teal);}
+  input:checked + .slider::before{transform:translateX(20px);}
+  input:disabled + .slider{background:var(--teal-dark);opacity:.6;cursor:not-allowed;}
+  .cookie-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:20px;align-items:center;flex-wrap:wrap;}
+  @media (max-width:480px){
+    .cookie-actions{justify-content:stretch;}
+    .cookie-actions .btn{flex:1;justify-content:center;}
+    .save-msg{width:100%;text-align:center;order:-1;}
+  }
+  .save-msg{font-size:13px;color:var(--teal-dark);font-weight:600;opacity:0;transition:opacity .3s ease;}
+  .save-msg.show{opacity:1;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:100px;font-weight:600;font-size:14.5px;cursor:pointer;border:none;transition:all .22s ease;}
+  .btn-teal{background:var(--teal);color:#fff;box-shadow:0 8px 20px -8px rgba(14,165,165,.5);}
+  .btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);}
+  .btn-outline{background:transparent;border:1.5px solid var(--line);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--ink);}
+
+  /* rights flip cards */
+  .rights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:860px){.rights-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.rights-grid{grid-template-columns:1fr;}}
+  .flip-card{perspective:1200px;height:170px;}
+  .flip-inner{
+    position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1);
+    transform-style:preserve-3d;cursor:pointer;
+  }
+  .flip-card.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-front, .flip-back{
+    position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--radius-sm);
+    padding:22px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .flip-front{background:var(--white);border:1px solid var(--line);}
+  .flip-front .ic{width:36px;height:36px;border-radius:10px;background:var(--violet-tint);color:var(--violet);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .flip-front h4{font-size:15px;}
+  .flip-front span{font-size:12px;color:var(--muted);margin-top:6px;}
+  .flip-back{background:linear-gradient(135deg,var(--teal-dark),var(--violet) 60%, var(--coral));color:#fff;transform:rotateY(180deg);}
+  .flip-back p{color:rgba(255,255,255,.92);font-size:13px;}
+
+  /* retention / security */
+  .duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:760px){.duo-grid{grid-template-columns:1fr;}}
+  .duo-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;}
+  .duo-card h4{font-size:15.5px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .duo-card h4 .ic{width:30px;height:30px;border-radius:8px;background:var(--teal-tint);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .duo-card p{font-size:14px;}
+
+  /* contact end card */
+  .end-card{
+    background:linear-gradient(135deg,#0b1224,#0f2e63 55%,#2563eb 130%);
+    border-radius:28px;padding:clamp(40px,8vw,56px) clamp(20px,6vw,44px);text-align:center;position:relative;overflow:hidden;isolation:isolate;
+  }
+  .end-card::before{content:'';position:absolute;top:-30%;right:-10%;width:60%;height:160%;background:radial-gradient(circle, rgba(56,189,248,.28), transparent 65%);filter:blur(10px);}
+  .end-card::after{content:'';position:absolute;bottom:-40%;left:-10%;width:55%;height:160%;background:radial-gradient(circle, rgba(99,102,241,.25), transparent 65%);filter:blur(10px);}
+  .end-glass{
+    position:relative;z-index:2;max-width:520px;margin:0 auto;padding:40px 32px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;
+    backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+    box-shadow:0 8px 30px -8px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.22);
+  }
+  .end-card h2{color:#fff;font-size:26px;margin-bottom:12px;}
+  .end-card p{color:rgba(255,255,255,.78);font-size:14.5px;margin-bottom:24px;}
+  .end-card .btn-teal{background:#fff;color:var(--teal-dark);}
+  .end-card .btn-teal:hover{background:var(--amber);color:var(--ink);}
+
+  .updated-line{text-align:center;font-size:13px;color:var(--muted);margin-top:24px;font-family:'JetBrains Mono',monospace;}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .back-to-top{
+    position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;
+    background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:all .3s ease;z-index:90;
+  }
+  .back-to-top.show{opacity:1;pointer-events:auto;}
+  .back-to-top:hover{background:var(--teal);}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="home-btn" id="homeBtn" aria-label="Back to home">
+  <span class="home-btn-icon">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
+  <span>Home</span>
+</a>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge-pill">
+      <svg class="lock" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 1112 0v2M5 10h14a1 1 0 011 1v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Last updated January 2026
+    </span>
+    <h1>Your data, handled the way <span>you'd</span> want it handled.</h1>
+    <p class="lead">This policy explains, in plain language, exactly what Zynocta collects, why we collect it, and the controls you have over it at every step.</p>
+    <div class="trust-strip">
+      <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Encrypted in transit &amp; at rest</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>GDPR &amp; CCPA aligned</div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>We never sell your data</div>
+    </div>
+  </div>
+</section>
+
+<div class="policy-layout">
+  <aside class="toc">
+    <div class="toc-card">
+      <h5>On this page</h5>
+      <a href="#collect" class="num-link"><span class="num">01</span>Information we collect</a>
+      <a href="#use" class="num-link"><span class="num">02</span>How we use it</a>
+      <a href="#cookies" class="num-link"><span class="num">03</span>Cookies &amp; tracking</a>
+      <a href="#rights" class="num-link"><span class="num">04</span>Your privacy rights</a>
+      <a href="#retention" class="num-link"><span class="num">05</span>Retention &amp; security</a>
+      <a href="#contact" class="num-link"><span class="num">06</span>Contact us</a>
+    </div>
+  </aside>
+
+  <div class="content-col">
+
+    <div id="collect" class="policy-section reveal">
+      <span class="sec-eyebrow">01 · Data Collection</span>
+      <h2>Information we collect</h2>
+      <p>We only collect what's needed to deliver your project well and support you afterward — nothing decorative.</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h4>Account &amp; contact info</h4>
+          <p>Name, email, phone, billing address — provided when you sign up or request a quote.</p>
+        </div>
+        <div class="info-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m18 0V5a2 2 0 00-2-2h-4m0 18h4a2 2 0 002-2v-4M3 15v4a2 2 0 002 2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h4>Project &amp; brand assets</h4>
+          <p>Files, briefs, and content you upload for us to design, build, or market with.</p>
+        </div>
+        <div class="info-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 19h16M4 15h10M4 11h16M4 7h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h4>Usage &amp; device data</h4>
+          <p>Browser type, pages visited, and rough location — collected automatically for site analytics.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="use" class="policy-section reveal">
+      <span class="sec-eyebrow">02 · Purpose</span>
+      <h2>How we use it</h2>
+      <p>Every use of your data ties back to one of these purposes — we don't repurpose it beyond this list.</p>
+      <div class="use-list">
+        <div class="use-row"><span class="mono-tag">deliver</span><p>To scope, build, and hand off the project or service you've hired us for.</p></div>
+        <div class="use-row"><span class="mono-tag">support</span><p>To respond to questions, troubleshoot issues, and process refund or billing requests.</p></div>
+        <div class="use-row"><span class="mono-tag">improve</span><p>To understand how our site and services are used so we can fix friction points.</p></div>
+        <div class="use-row"><span class="mono-tag">notify</span><p>To send project updates, invoices, and — only if you opt in — occasional product news.</p></div>
+        <div class="use-row"><span class="mono-tag">protect</span><p>To detect fraud, secure accounts, and meet our legal and tax obligations.</p></div>
+      </div>
+    </div>
+
+    <div id="cookies" class="policy-section reveal">
+      <span class="sec-eyebrow">03 · Tracking</span>
+      <h2>Cookies &amp; tracking preferences</h2>
+      <p>Adjust what you're comfortable with below. Essential cookies keep the site functioning and can't be turned off.</p>
+      <div class="cookie-panel">
+        <div class="cookie-row">
+          <div><h4>Essential cookies</h4><p>Required for login sessions, cart state, and basic site security.</p></div>
+          <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div><h4>Analytics cookies</h4><p>Helps us see which pages are useful and which ones need work.</p></div>
+          <label class="switch"><input type="checkbox" id="ck-analytics" checked><span class="slider"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div><h4>Marketing cookies</h4><p>Used to show relevant Zynocta offers on other sites you visit.</p></div>
+          <label class="switch"><input type="checkbox" id="ck-marketing"><span class="slider"></span></label>
+        </div>
+        <div class="cookie-actions">
+          <span class="save-msg" id="saveMsg">Preferences saved ✓</span>
+          <button class="btn btn-outline" id="rejectAll">Reject non-essential</button>
+          <button class="btn btn-teal" id="savePrefs">Save preferences</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="rights" class="policy-section reveal">
+      <span class="sec-eyebrow">04 · Control</span>
+      <h2>Your privacy rights</h2>
+      <p>Tap a card to see what each right means and how to use it. These apply regardless of where you're located.</p>
+      <div class="rights-grid">
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2"/></svg></div><h4>Right to access</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Request a copy of every piece of personal data we hold about you, at any time, free of charge.</p></div>
+        </div></div>
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Right to correct</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Ask us to fix inaccurate or outdated details in your account or project records.</p></div>
+        </div></div>
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Right to delete</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Request permanent deletion of your data once no legal or contractual reason remains to keep it.</p></div>
+        </div></div>
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Right to portability</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Export your data in a common, machine-readable format to move to another provider.</p></div>
+        </div></div>
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M4.9 4.9l14.2 14.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Right to restrict</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Ask us to pause specific processing — like marketing use — while keeping the underlying data.</p></div>
+        </div></div>
+        <div class="flip-card"><div class="flip-inner">
+          <div class="flip-front"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h4>Right to object</h4><span>Tap to view</span></div>
+          <div class="flip-back"><p>Opt out of processing based on legitimate interest, including profiling for marketing.</p></div>
+        </div></div>
+      </div>
+    </div>
+
+    <div id="retention" class="policy-section reveal">
+      <span class="sec-eyebrow">05 · Safeguards</span>
+      <h2>Retention &amp; security</h2>
+      <p>How long we keep things, and what protects them while we do.</p>
+      <div class="duo-grid">
+        <div class="duo-card">
+          <h4><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Retention windows</h4>
+          <p>Active project data is kept for the life of our engagement plus 24 months for support and tax purposes, then securely deleted unless you request otherwise.</p>
+        </div>
+        <div class="duo-card">
+          <h4><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 1112 0v2M5 10h14a1 1 0 011 1v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Security measures</h4>
+          <p>Encrypted storage, access limited to staff on a need-to-know basis, and regular third-party audits of our infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="policy-section reveal">
+      <div class="end-card">
+        <div class="end-glass">
+          <h2>Questions about your data?</h2>
+          <p>Reach our privacy team directly — we reply to every request within two business days.</p>
+          <a href="index.html#form" class="btn btn-teal">Email privacy@zynocta.com</a>
+        </div>
+      </div>
+      <p class="updated-line">© 2026 Zynocta Agency · Privacy Policy last revised January 2026</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-to-top" id="backToTop">↑</div>
+
+<script>
+  // back to top
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 500));
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // TOC active state on scroll
+  const tocLinks = document.querySelectorAll('.toc-card a');
+  const sections = Array.from(tocLinks).map(a => document.querySelector(a.getAttribute('href')));
+  window.addEventListener('scroll', () => {
+    let current = sections[0];
+    sections.forEach(sec => { if(sec && window.scrollY >= sec.offsetTop - 140) current = sec; });
+    tocLinks.forEach(a => a.classList.toggle('active', document.querySelector(a.getAttribute('href')) === current));
+  });
+
+  // flip cards
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
+  // cookie panel
+  const saveMsg = document.getElementById('saveMsg');
+  document.getElementById('savePrefs').addEventListener('click', () => {
+    saveMsg.classList.add('show');
+    setTimeout(() => saveMsg.classList.remove('show'), 2200);
+  });
+  document.getElementById('rejectAll').addEventListener('click', () => {
+    document.getElementById('ck-analytics').checked = false;
+    document.getElementById('ck-marketing').checked = false;
+    saveMsg.classList.add('show');
+    setTimeout(() => saveMsg.classList.remove('show'), 2200);
+  });
+</script>
+
+</body>
+</html>

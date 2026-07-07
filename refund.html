@@ -1,0 +1,1681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refund Policy — Zynocta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #12141c;
+        --ink-soft: #3a3d4a;
+        --muted: #6b7080;
+        --paper: #f5f6f9;
+        --white: #ffffff;
+        --line: #e4e6ee;
+        --indigo: #362fd9;
+        --indigo-dark: #241e99;
+        --indigo-tint: #eceafe;
+        --amber: #ffb020;
+        --amber-tint: #fff4e0;
+        --green: #1c9b6d;
+        --green-tint: #e6f7f0;
+        --red: #e1483f;
+        --red-tint: #fdecec;
+        --radius: 16px;
+        --radius-sm: 10px;
+        --shadow: 0 10px 30px -12px rgba(18, 20, 28, 0.12);
+        --shadow-lg: 0 24px 60px -20px rgba(18, 20, 28, 0.22);
+        --maxw: 1180px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", sans-serif;
+        margin: 0;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+      }
+      p {
+        margin: 0;
+        line-height: 1.65;
+        color: var(--ink-soft);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--indigo);
+        font-weight: 500;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--amber);
+      }
+      section {
+        padding: 96px 0;
+      }
+      @media (max-width: 768px) {
+        section {
+          padding: 64px 0;
+        }
+      }
+
+      /* ---------- NAV ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(245, 246, 249, 0.75);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid transparent;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background 0.3s ease;
+      }
+      header.scrolled {
+        border-color: var(--line);
+        box-shadow: 0 4px 20px -8px rgba(18, 20, 28, 0.08);
+        background: rgba(255, 255, 255, 0.85);
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 18px 24px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .logo-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--indigo), var(--indigo-dark));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        box-shadow: 0 6px 16px -4px rgba(54, 47, 217, 0.5);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      .nav-links a {
+        font-size: 14.5px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        position: relative;
+        padding: 4px 0;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: var(--indigo);
+        transition: width 0.25s ease;
+      }
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-cta {
+        background: var(--ink);
+        color: #fff !important;
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-size: 14px;
+        font-weight: 600;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .nav-cta:hover {
+        background: var(--indigo);
+        transform: translateY(-1px);
+      }
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .burger span {
+        width: 22px;
+        height: 2px;
+        background: var(--ink);
+        border-radius: 2px;
+        transition: 0.25s;
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: var(--white);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-menu a {
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--line);
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .burger {
+          display: flex;
+        }
+      }
+
+      /* ---------- HOME BUTTON ---------- */
+      .home-btn {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        z-index: 200;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        color: var(--ink);
+        padding: 11px 22px 11px 14px;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 14.5px;
+        font-family: "Inter", sans-serif;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow:
+          0 8px 24px -8px rgba(18, 20, 28, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        overflow: hidden;
+      }
+      .home-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 100px;
+        padding: 1.5px;
+        background: linear-gradient(135deg, var(--indigo), var(--amber));
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+      }
+      .home-btn:hover {
+        background: var(--white);
+        transform: translateY(-3px);
+        box-shadow:
+          0 16px 34px -10px rgba(54, 47, 217, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      }
+      .home-btn:hover::before {
+        opacity: 1;
+      }
+      .home-btn:active {
+        transform: translateY(-1px) scale(0.98);
+      }
+      .home-btn-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--indigo), var(--indigo-dark));
+        color: #fff;
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+          box-shadow 0.35s ease;
+        box-shadow: 0 4px 10px -2px rgba(54, 47, 217, 0.5);
+      }
+      .home-btn:hover .home-btn-icon {
+        transform: translateX(-4px) rotate(-8deg);
+        box-shadow: 0 6px 16px -2px rgba(54, 47, 217, 0.65);
+      }
+      .home-btn span:last-child {
+        background: linear-gradient(90deg, var(--ink), var(--ink));
+        -webkit-background-clip: text;
+      }
+      .home-btn:hover span:last-child {
+        background: linear-gradient(90deg, var(--indigo), var(--indigo-dark));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @media (max-width: 480px) {
+        .home-btn {
+          top: 16px;
+          left: 16px;
+          padding: 9px 18px 9px 10px;
+          font-size: 13.5px;
+          gap: 8px;
+        }
+        .home-btn-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        padding: 88px 0 64px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -140px;
+        right: -160px;
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(
+          circle at center,
+          rgba(54, 47, 217, 0.14),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -160px;
+        left: -140px;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 176, 32, 0.14),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.05;
+        margin: 18px 0 20px;
+      }
+      .hero h1 .accent {
+        color: var(--indigo);
+      }
+      .hero p.lead {
+        font-size: 17.5px;
+        max-width: 480px;
+        margin-bottom: 32px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.22s ease;
+      }
+      .btn-primary {
+        background: var(--indigo);
+        color: #fff;
+        box-shadow: 0 10px 24px -8px rgba(54, 47, 217, 0.5);
+      }
+      .btn-primary:hover {
+        background: var(--indigo-dark);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid var(--line);
+      }
+      .btn-ghost:hover {
+        border-color: var(--ink);
+      }
+      .trust-row {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13.5px;
+        color: var(--ink-soft);
+        font-weight: 500;
+      }
+      .trust-item .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        flex-shrink: 0;
+      }
+
+      /* hero visual: timeline card */
+      .hero-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: var(--shadow-lg);
+      }
+      .hero-card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+      .hero-card-head span {
+        font-size: 12px;
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+      }
+      .hero-track {
+        position: relative;
+        height: 6px;
+        background: var(--line);
+        border-radius: 6px;
+        margin: 24px 0 10px;
+      }
+      .hero-track-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 6px;
+        background: linear-gradient(90deg, var(--green), var(--indigo));
+        width: 0%;
+        transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .hero-track-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11.5px;
+        color: var(--muted);
+        font-family: "IBM Plex Mono", monospace;
+      }
+      .hero-mini-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .mini-stat {
+        background: var(--paper);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .mini-stat b {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 22px;
+        color: var(--indigo);
+      }
+      .mini-stat span {
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+
+      /* ---------- STAT BAR ---------- */
+      .statbar {
+        background: var(--ink);
+        padding: 0;
+      }
+      .statbar .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .stat-cell {
+        padding: 32px 24px;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .stat-cell:last-child {
+        border-right: none;
+      }
+      .stat-cell b {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        color: #fff;
+        font-size: 28px;
+        margin-bottom: 6px;
+      }
+      .stat-cell span {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13px;
+      }
+      @media (max-width: 768px) {
+        .statbar .wrap {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stat-cell {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      /* ---------- SECTION HEAD ---------- */
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 48px;
+      }
+      .section-head h2 {
+        font-size: clamp(26px, 3.4vw, 38px);
+        margin-top: 14px;
+      }
+      .section-head p {
+        margin-top: 14px;
+        font-size: 16px;
+      }
+
+      /* ---------- CHECKER (signature element) ---------- */
+      .checker {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 44px;
+        box-shadow: var(--shadow);
+      }
+      @media (max-width: 640px) {
+        .checker {
+          padding: 26px;
+        }
+      }
+      .checker-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      @media (max-width: 860px) {
+        .checker-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .field {
+        margin-bottom: 22px;
+      }
+      .field label {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--ink);
+      }
+      .field select,
+      .field input[type="number"] {
+        width: 100%;
+        padding: 13px 16px;
+        border-radius: var(--radius-sm);
+        border: 1.5px solid var(--line);
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        background: var(--paper);
+        color: var(--ink);
+        transition: border-color 0.2s ease;
+      }
+      .field select:focus,
+      .field input:focus {
+        outline: none;
+        border-color: var(--indigo);
+      }
+      .day-slider-wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        flex: 1;
+        height: 6px;
+        border-radius: 6px;
+        background: var(--line);
+        outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--indigo);
+        cursor: pointer;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 8px rgba(54, 47, 217, 0.5);
+      }
+      .day-badge {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 14px;
+        font-weight: 500;
+        background: var(--indigo-tint);
+        color: var(--indigo);
+        padding: 8px 14px;
+        border-radius: 8px;
+        min-width: 64px;
+        text-align: center;
+      }
+      .verdict {
+        border-radius: var(--radius);
+        padding: 26px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--paper);
+        border: 1.5px dashed var(--line);
+        transition: all 0.3s ease;
+      }
+      .verdict.eligible {
+        background: var(--green-tint);
+        border-color: var(--green);
+        border-style: solid;
+      }
+      .verdict.partial {
+        background: var(--amber-tint);
+        border-color: var(--amber);
+        border-style: solid;
+      }
+      .verdict.ineligible {
+        background: var(--red-tint);
+        border-color: var(--red);
+        border-style: solid;
+      }
+      .verdict-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .verdict.eligible .verdict-icon {
+        background: var(--green);
+      }
+      .verdict.partial .verdict-icon {
+        background: var(--amber);
+      }
+      .verdict.ineligible .verdict-icon {
+        background: var(--red);
+      }
+      .verdict h4 {
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .verdict p {
+        font-size: 14.5px;
+      }
+      .verdict .amount {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 32px;
+        margin: 12px 0;
+        color: var(--ink);
+      }
+
+      /* ---------- POLICY CARDS ---------- */
+      .cards-two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      @media (max-width: 860px) {
+        .cards-two {
+          grid-template-columns: 1fr;
+        }
+      }
+      .policy-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 32px;
+      }
+      .policy-card .tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 6px 12px;
+        border-radius: 100px;
+        margin-bottom: 18px;
+      }
+      .tag.good {
+        background: var(--green-tint);
+        color: var(--green);
+      }
+      .tag.bad {
+        background: var(--red-tint);
+        color: var(--red);
+      }
+      .policy-card ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .policy-card li {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14.5px;
+        color: var(--ink-soft);
+      }
+      .policy-card li:last-child {
+        border-bottom: none;
+      }
+      .policy-card li .ico {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 1px;
+      }
+      .good .ico {
+        background: var(--green);
+      }
+      .bad .ico {
+        background: var(--red);
+      }
+
+      /* ---------- PROCESS TIMELINE ---------- */
+      .timeline {
+        position: relative;
+        padding-left: 0;
+      }
+      .timeline-row {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 24px;
+        position: relative;
+      }
+      .timeline-row .num-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .timeline-row .num {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--indigo);
+        color: var(--indigo);
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        z-index: 2;
+        background: var(--paper);
+      }
+      .timeline-row .line {
+        width: 2px;
+        flex: 1;
+        background: var(--line);
+        margin-top: 6px;
+      }
+      .timeline-row:last-child .line {
+        display: none;
+      }
+      .timeline-content {
+        padding-bottom: 44px;
+      }
+      .timeline-content h4 {
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .timeline-content p {
+        font-size: 14.5px;
+        max-width: 520px;
+      }
+      .timeline-content .when {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12px;
+        color: var(--indigo);
+        letter-spacing: 0.04em;
+        display: inline-block;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      /* ---------- ACCORDION (Exceptions + FAQ) ---------- */
+      .accordion-item {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        margin-bottom: 12px;
+        overflow: hidden;
+        background: var(--white);
+      }
+      .accordion-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 22px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15.5px;
+      }
+      .accordion-head .plus {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--paper);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: var(--indigo);
+        transition: transform 0.3s ease;
+      }
+      .accordion-item.open .plus {
+        transform: rotate(45deg);
+        background: var(--indigo-tint);
+      }
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .accordion-body-inner {
+        padding: 0 22px 22px;
+        font-size: 14.5px;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- CONTACT / CTA ---------- */
+      .cta-banner {
+        background: linear-gradient(135deg, #0f172a, #1e2a63 45%, #362fd9 100%);
+        border-radius: 28px;
+        padding: 64px 48px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .cta-banner::before {
+        content: "";
+        position: absolute;
+        top: -30%;
+        left: -10%;
+        width: 60%;
+        height: 160%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 176, 32, 0.25),
+          transparent 65%
+        );
+        filter: blur(10px);
+      }
+      .cta-banner::after {
+        content: "";
+        position: absolute;
+        bottom: -40%;
+        right: -10%;
+        width: 55%;
+        height: 160%;
+        background: radial-gradient(
+          circle,
+          rgba(54, 47, 217, 0.35),
+          transparent 65%
+        );
+        filter: blur(10px);
+      }
+      .cta-glass {
+        position: relative;
+        z-index: 2;
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 48px 40px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 24px;
+        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
+        box-shadow:
+          0 8px 32px -8px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .cta-glass::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        border-radius: 24px 24px 0 0;
+      }
+      .cta-banner h2 {
+        color: #fff;
+        font-size: clamp(24px, 3.6vw, 36px);
+        margin-bottom: 14px;
+        position: relative;
+      }
+      .cta-banner p {
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 440px;
+        margin: 0 auto 30px;
+        position: relative;
+      }
+      .cta-banner .btn-primary {
+        background: linear-gradient(135deg, #ffb020, #ff9500);
+        color: #1a1200;
+        position: relative;
+        box-shadow: 0 10px 26px -8px rgba(255, 176, 32, 0.55);
+      }
+      .cta-banner .btn-primary:hover {
+        background: linear-gradient(135deg, #ffc555, #ffb020);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px -8px rgba(255, 176, 32, 0.7);
+      }
+      @media (max-width: 640px) {
+        .cta-banner {
+          padding: 44px 20px;
+        }
+        .cta-glass {
+          padding: 36px 24px;
+        }
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 56px 0 28px;
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 32px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 24px;
+      }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 19px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .footer-col h5 {
+        color: #fff;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 14px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 14px;
+        padding: 6px 0;
+        color: rgba(255, 255, 255, 0.6);
+        transition: color 0.2s ease;
+      }
+      .footer-col a:hover {
+        color: #fff;
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      /* ---------- misc ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .back-to-top {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 90;
+      }
+      .back-to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .back-to-top:hover {
+        background: var(--indigo);
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="index.html"
+      class="home-btn"
+      id="homeBtn"
+      aria-label="Back to home"
+    >
+      <span class="home-btn-icon">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 12H5M5 12L11 6M5 12L11 18"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span>Home</span>
+    </a>
+
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Refund Policy · Effective 2026</span>
+          <h1>
+            Fair terms,<br /><span class="accent">no fine-print traps.</span>
+          </h1>
+          <p class="lead">
+            At Zynocta, we stand behind every project we ship. If a service
+            doesn't meet what was agreed, here's exactly how, when, and how much
+            you get back — in plain language.
+          </p>
+          <div class="hero-actions">
+            <a href="#checker" class="btn btn-primary">Check my eligibility</a>
+            <a href="#overview" class="btn btn-ghost">Read the full policy</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item">
+              <span class="dot"></span>14-day money-back window
+            </div>
+            <div class="trust-item">
+              <span class="dot"></span>48-hour processing
+            </div>
+            <div class="trust-item">
+              <span class="dot"></span>Zero hidden deductions
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-head">
+            <strong
+              style="
+                font-family: &quot;Space Grotesk&quot;, sans-serif;
+                font-size: 15px;
+              "
+              >Refund Window</strong
+            >
+            <span>SAMPLE PREVIEW</span>
+          </div>
+          <p style="font-size: 13.5px">
+            Standard one-time project — window closes 14 days after kickoff.
+          </p>
+          <div class="hero-track">
+            <div class="hero-track-fill" id="heroFill"></div>
+          </div>
+          <div class="hero-track-labels">
+            <span>DAY 0</span><span>DAY 7</span><span>DAY 14</span>
+          </div>
+          <div class="hero-mini-stats">
+            <div class="mini-stat">
+              <b>100%</b><span>Refund before work starts</span>
+            </div>
+            <div class="mini-stat">
+              <b>50%</b><span>Refund after milestone 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="statbar">
+      <div class="wrap">
+        <div class="stat-cell">
+          <b>14 days</b><span>Standard refund window</span>
+        </div>
+        <div class="stat-cell">
+          <b>48 hrs</b><span>Average processing time</span>
+        </div>
+        <div class="stat-cell">
+          <b>0%</b><span>Undisclosed deductions</span>
+        </div>
+        <div class="stat-cell">
+          <b>3</b><span>Simple steps to request</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="overview">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Overview</span>
+          <h2>What's covered, and what isn't</h2>
+          <p>
+            Refund eligibility depends on project stage and service type. Here's
+            the honest breakdown before you commit to anything.
+          </p>
+        </div>
+        <div class="cards-two">
+          <div class="policy-card good reveal">
+            <span class="tag good">Refundable</span>
+            <ul>
+              <li>
+                <span class="ico">✓</span>Full refund if work hasn't started
+                within 14 days of payment.
+              </li>
+              <li>
+                <span class="ico">✓</span>Partial refund if only discovery or
+                strategy phase is complete.
+              </li>
+              <li>
+                <span class="ico">✓</span>Retainer refund for any unused,
+                unbilled month.
+              </li>
+              <li>
+                <span class="ico">✓</span>Full refund if Zynocta misses the
+                agreed first-draft deadline by 10+ days.
+              </li>
+              <li>
+                <span class="ico">✓</span>Duplicate or accidental payments,
+                refunded in full, no questions asked.
+              </li>
+            </ul>
+          </div>
+          <div class="policy-card bad reveal">
+            <span class="tag bad">Non-refundable</span>
+            <ul>
+              <li>
+                <span class="ico">✕</span>Final deliverables that have been
+                approved and handed over.
+              </li>
+              <li>
+                <span class="ico">✕</span>Third-party costs already spent
+                (domains, stock assets, ad spend).
+              </li>
+              <li>
+                <span class="ico">✕</span>Custom or rush projects marked "final
+                sale" at checkout.
+              </li>
+              <li>
+                <span class="ico">✕</span>Change-of-mind requests made after
+                milestone 2 sign-off.
+              </li>
+              <li>
+                <span class="ico">✕</span>Work delayed due to client-side
+                non-response beyond 30 days.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checker">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Interactive Tool</span>
+          <h2>Check your refund eligibility</h2>
+          <p>
+            Select your service and how many days have passed since payment.
+            We'll estimate exactly what you're entitled to — instantly.
+          </p>
+        </div>
+        <div class="checker reveal">
+          <div class="checker-grid">
+            <div>
+              <div class="field">
+                <label for="serviceType">Service type</label>
+                <select id="serviceType">
+                  <option value="onetime">
+                    One-time project (web/branding/design)
+                  </option>
+                  <option value="retainer">
+                    Monthly retainer (marketing/SEO/social)
+                  </option>
+                  <option value="rush">Rush / custom order (final sale)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="daySlider"
+                  >Days since payment:
+                  <span id="dayLive" class="mono">3</span></label
+                >
+                <div class="day-slider-wrap">
+                  <input
+                    type="range"
+                    id="daySlider"
+                    min="0"
+                    max="30"
+                    value="3"
+                  />
+                  <div class="day-badge" id="dayBadge">3 / 30</div>
+                </div>
+              </div>
+              <p style="font-size: 13px; color: var(--muted)">
+                This tool gives an estimate only. Final eligibility is confirmed
+                by our support team after reviewing your project stage.
+              </p>
+            </div>
+            <div class="verdict eligible" id="verdictBox">
+              <div class="verdict-icon" id="verdictIcon">✓</div>
+              <h4 id="verdictTitle">Fully eligible</h4>
+              <div class="amount" id="verdictAmount">100% refund</div>
+              <p id="verdictText">
+                You're well within the 14-day window for one-time projects.
+                Submit a request and we'll process it within 48 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" style="background: var(--white)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Process</span>
+          <h2>How a refund actually happens</h2>
+          <p>
+            Four steps, start to finish. No forms buried in legal jargon, no
+            waiting weeks for a reply.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-row reveal">
+            <div class="num-col">
+              <div class="num">01</div>
+              <div class="line"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="when">Same day</span>
+              <h4>Submit your request</h4>
+              <p>
+                Email refunds@zynocta.com or use the contact form below with
+                your invoice number and reason. That's the entire application.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-row reveal">
+            <div class="num-col">
+              <div class="num">02</div>
+              <div class="line"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="when">Within 24 hours</span>
+              <h4>We review project stage</h4>
+              <p>
+                Our delivery team checks what's been completed against your
+                contract's milestone schedule to confirm the applicable
+                percentage.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-row reveal">
+            <div class="num-col">
+              <div class="num">03</div>
+              <div class="line"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="when">Within 48 hours</span>
+              <h4>Decision confirmed by email</h4>
+              <p>
+                You'll get a written breakdown of the refund amount, any
+                deductions, and the exact date funds are released.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-row reveal">
+            <div class="num-col"><div class="num">04</div></div>
+            <div class="timeline-content">
+              <span class="when">5–10 business days</span>
+              <h4>Funds returned to source</h4>
+              <p>
+                Refunds are issued to your original payment method. Bank
+                processing times vary but we never hold funds longer than 10
+                business days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exceptions">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Special Cases</span>
+          <h2>Exceptions worth knowing</h2>
+          <p>
+            A handful of situations fall outside the standard rule. Here's how
+            each one is handled.
+          </p>
+        </div>
+        <div class="acc-group">
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Zynocta misses a deadline<span class="plus">+</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                If we miss an agreed milestone deadline by more than 10 calendar
+                days without prior notice, you can request a full refund for any
+                unbilled or incomplete portion of the project — regardless of
+                the standard 14-day window.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              You cancel mid-retainer<span class="plus">+</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Monthly retainers are billed in advance. Cancelling before the
+                next billing cycle gets you a full refund of that unused month;
+                work already delivered in the current month is not refunded.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Chargebacks and disputes<span class="plus">+</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                We ask that you contact us before filing a bank chargeback. Most
+                disputes are resolved faster through a direct refund request,
+                and an open chargeback will pause any active project work until
+                resolved.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Rush and custom orders<span class="plus">+</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Projects explicitly marked "final sale" at checkout — typically
+                rush turnarounds under 72 hours — are non-refundable once work
+                begins, since resources are allocated immediately upon payment.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background: var(--white)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions</h2>
+          <p>
+            Still unsure about something? These are the questions our support
+            team hears most often.
+          </p>
+        </div>
+        <div class="acc-group" style="max-width: 760px">
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Do I need a reason to request a refund?<span class="plus">+</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Not a detailed one — a short explanation helps us process
+                faster, but eligibility is based on project stage and timing,
+                not on justifying your decision.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Can I get store credit instead of cash back?<span class="plus"
+                >+</span
+              >
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Yes. On request, we can issue eligible refunds as account credit
+                with an added 10% bonus, valid toward any future Zynocta service
+                for 12 months.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              What if I paid through a third-party platform?<span class="plus"
+                >+</span
+              >
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Refunds are always issued back through the same platform or
+                processor you paid with. Processing times may be slightly longer
+                depending on that platform's own policies.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal">
+            <div class="accordion-head">
+              Does a refund cancel my project entirely?<span class="plus"
+                >+</span
+              >
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Yes, a processed refund closes out the associated project or
+                billing cycle. If you'd rather adjust scope instead of
+                cancelling, mention that in your request — we're usually happy
+                to find a middle ground.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="cta-banner reveal">
+          <div class="cta-glass">
+            <h2>Ready to request your refund?</h2>
+            <p>
+              Send us your invoice number and a short note. Our team replies
+              within 24 hours, every business day.
+            </p>
+            <a href="index.html#form" class="btn btn-primary"
+              >Email refunds@zynocta.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+      // Back to top button
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        backToTop.classList.toggle("show", window.scrollY > 500);
+      });
+      backToTop.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" }),
+      );
+
+      // Reveal on scroll
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+
+      // Hero track fill animation
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          document.getElementById("heroFill").style.width = "50%";
+        }, 300);
+      });
+
+      // Accordions
+      document.querySelectorAll(".accordion-item").forEach((item) => {
+        const head = item.querySelector(".accordion-head");
+        const body = item.querySelector(".accordion-body");
+        head.addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          // close siblings within same group
+          item.parentElement
+            .querySelectorAll(".accordion-item")
+            .forEach((sib) => {
+              sib.classList.remove("open");
+              sib.querySelector(".accordion-body").style.maxHeight = null;
+            });
+          if (!isOpen) {
+            item.classList.add("open");
+            body.style.maxHeight = body.scrollHeight + "px";
+          }
+        });
+      });
+
+      // Eligibility checker logic
+      const serviceType = document.getElementById("serviceType");
+      const daySlider = document.getElementById("daySlider");
+      const dayLive = document.getElementById("dayLive");
+      const dayBadge = document.getElementById("dayBadge");
+      const verdictBox = document.getElementById("verdictBox");
+      const verdictIcon = document.getElementById("verdictIcon");
+      const verdictTitle = document.getElementById("verdictTitle");
+      const verdictAmount = document.getElementById("verdictAmount");
+      const verdictText = document.getElementById("verdictText");
+
+      function updateChecker() {
+        const type = serviceType.value;
+        const days = parseInt(daySlider.value, 10);
+        dayLive.textContent = days;
+        dayBadge.textContent = days + " / 30";
+
+        let cls = "eligible",
+          icon = "✓",
+          title = "",
+          amount = "",
+          text = "";
+
+        if (type === "rush") {
+          cls = "ineligible";
+          icon = "✕";
+          title = "Not eligible";
+          amount = "0% refund";
+          text =
+            "Rush and custom orders are marked final sale at checkout. Work begins immediately on payment, so no refund window applies.";
+        } else if (type === "retainer") {
+          if (days <= 0) {
+            cls = "eligible";
+            icon = "✓";
+            title = "Fully eligible";
+            amount = "100% refund";
+            text =
+              "No work has started on this billing cycle yet — you can cancel for a full refund of this month.";
+          } else if (days < 30) {
+            cls = "partial";
+            icon = "!";
+            title = "Partially eligible";
+            amount = "Prorated refund";
+            text =
+              "You'll be refunded for the unused remainder of the current billing cycle only. Work already delivered this month is non-refundable.";
+          } else {
+            cls = "ineligible";
+            icon = "✕";
+            title = "Cycle completed";
+            amount = "0% refund";
+            text =
+              "This billing cycle has run its full course. Cancel now to stop future charges — the current month is not refundable.";
+          }
+        } else {
+          // onetime
+          if (days <= 7) {
+            cls = "eligible";
+            icon = "✓";
+            title = "Fully eligible";
+            amount = "100% refund";
+            text =
+              "You're well within the 14-day window and before milestone 1. Submit a request and we'll process it within 48 hours.";
+          } else if (days <= 14) {
+            cls = "partial";
+            icon = "!";
+            title = "Partially eligible";
+            amount = "50% refund";
+            text =
+              "You're still inside the 14-day window, but past the first project milestone — half the project fee is refundable.";
+          } else {
+            cls = "ineligible";
+            icon = "✕";
+            title = "Window closed";
+            amount = "0% refund";
+            text =
+              'The standard 14-day window has passed. Check the "Exceptions" section — a missed deadline on our end may still qualify you.';
+          }
+        }
+
+        verdictBox.className = "verdict " + cls;
+        verdictIcon.textContent = icon;
+        verdictTitle.textContent = title;
+        verdictAmount.textContent = amount;
+        verdictText.textContent = text;
+      }
+
+      serviceType.addEventListener("change", updateChecker);
+      daySlider.addEventListener("input", updateChecker);
+      updateChecker();
+    </script>
+  </body>
+</html>

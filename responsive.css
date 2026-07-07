@@ -1,0 +1,238 @@
+/* Responsive tweaks Navbar */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    min-width: calc(50% - 12px);
+  }
+}
+@media (max-width: 992px) {
+  .about {
+    padding: 70px 5%;
+  }
+  .about-data {
+    gap: 30px;
+  }
+  .about-text h3 {
+    font-size: 1.6rem;
+  }
+  .services {
+    padding: var(--sp-10) var(--sp-0);
+  }
+    .overlay {
+    padding: 30px;
+  }
+
+  .overlay h2 {
+    font-size: 28px;
+  }
+
+}
+@media (max-width: 900px) {
+  nav .bar-chart {
+    display: block;
+  }
+  .nav-item ul {
+    display: none;
+  }
+  .login {
+    display: none;
+  }
+  nav {
+    justify-content: space-between;
+    padding: 0 var(--sp-20);
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .why-left {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .why-right {
+    width: 100%;
+  }
+  .counter-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 868px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+  .navbar .logo img {
+    width: 150px;
+  }
+  .navbar .nav-item ul li a {
+    font-size: 1.1rem;
+  }
+  .about-data {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    order: 2;
+  }
+  .about-image {
+    order: 1;
+  }
+  .about-btn {
+    margin: 0 auto;
+  }
+  .skills-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--sp-20);
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  .heading {
+    font-size: 2.25rem;
+  }
+  .contact-card {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+    margin: 10px;
+  }
+  .image-side {
+    height: 400px;
+  }
+  .form-side {
+    padding: 30px 20px;
+  }
+    .overlay {
+    background: linear-gradient(
+      to top,
+      rgba(15, 23, 42, 0.301),
+      rgba(15, 23, 42, 0.171)
+    );
+  }
+
+  .overlay h2 {
+    font-size: 24px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+  /* footer  */
+  .footer {
+    padding: 50px 20px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    place-items: start;
+  }
+  .footer-col {
+    width: auto;
+    /* text-align: left; */
+  }
+  .newsletter {
+    flex-direction: column;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+
+  .newsletter button {
+    border-radius: 0 0 8px 8px;
+  }
+}
+@media (max-width: 640px) {
+  .testimonial-card {
+    min-width: 100%;
+    padding: 30px;
+  }
+  .testimonial-container {
+    padding: 60px 20px;
+  }
+     .modal-container {
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+
+    .modal-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-title {
+        font-size: 26px;
+    }
+    .modal-form{
+      gap: 10px;
+    }
+}
+@media (max-width: 576px) {
+  .service-heading h2 {
+    font-size: var(--fs-28);
+  }
+  .service-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .counter-container {
+    grid-template-columns: 1fr;
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .why-left {
+    text-align: left;
+  }
+  /* footer  */
+  .footer-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    place-items: center;
+  }
+  .footer-col {
+    max-width: 300px;
+    text-align: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .modal-header{
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .main-about h2 {
+    font-size: 2rem;
+  }
+  .about-text h3 {
+    font-size: 1.4rem;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+  }
+  .why-left h2 {
+    font-size: 2rem;
+  }
+}

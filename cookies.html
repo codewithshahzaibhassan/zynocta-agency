@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Policy · full width</title>
+    <style>
+        /* ──────────── Reset & Base ──────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #f0f7ff 0%, #dce9f8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* tiny gap for breathing on small screens */
+            color: #1a2a4a;
+        }
+
+        /* ──────────── Full‑width Card ──────────── */
+        .policy-card {
+            width: 100%;
+            max-width: 100%;
+            /* full width, no limit */
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 2.8rem 3rem;
+            box-shadow:
+                0 20px 60px rgba(30, 60, 130, 0.10),
+                0 8px 24px rgba(30, 60, 130, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* ──────────── Home Button ──────────── */
+        .home-btn {
+            position: absolute;
+            top: 1.6rem;
+            left: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(60, 120, 220, 0.20);
+            border-radius: 60px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1a3a7a;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(30, 70, 150, 0.08);
+            transition: all 0.25s ease;
+            z-index: 10;
+            letter-spacing: 0.3px;
+        }
+
+        .home-btn .arrow {
+            font-size: 1.2rem;
+            line-height: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(40, 100, 220, 0.40);
+            box-shadow: 0 6px 20px rgba(30, 70, 180, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .home-btn:hover .arrow {
+            transform: translateX(-4px);
+        }
+
+        .home-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ──────────── Content ──────────── */
+        .policy-content {
+            margin-top: 0.8rem;
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+
+        .policy-header .icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #d6e8ff, #b8d4ff);
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 24px rgba(40, 100, 220, 0.15);
+        }
+
+        .policy-header .icon-wrap svg {
+            width: 36px;
+            height: 36px;
+            fill: #1a4a8a;
+        }
+
+        .policy-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2a5a;
+            letter-spacing: -0.5px;
+        }
+
+        .policy-header .sub {
+            font-size: 1rem;
+            color: #4a6a9a;
+            margin-top: 0.3rem;
+            font-weight: 400;
+        }
+
+        /* ──────────── Policy Body ──────────── */
+        .policy-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .policy-body .last-updated {
+            font-size: 0.85rem;
+            color: #5a7aaa;
+            text-align: right;
+            border-bottom: 1px solid rgba(60, 120, 220, 0.10);
+            padding-bottom: 0.6rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .policy-body .last-updated strong {
+            color: #1a4a8a;
+            font-weight: 600;
+        }
+
+        .policy-body h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a2a5a;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .policy-body h2 .badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: #d6e8ff;
+            color: #1a4a8a;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        .policy-body p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1a2e4e;
+        }
+
+        .policy-body ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin: 0.3rem 0 0.2rem;
+        }
+
+        .policy-body ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #1a2e4e;
+            padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+            background: rgba(210, 232, 255, 0.25);
+            border-radius: 12px;
+            border-left: 3px solid #5a9aff;
+        }
+
+        .policy-body ul li .li-icon {
+            color: #2a7aff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .policy-body .highlight-box {
+            background: rgba(210, 232, 255, 0.35);
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            border: 1px solid rgba(60, 140, 255, 0.15);
+            margin: 0.2rem 0 0.2rem;
+        }
+
+        .policy-body .highlight-box p {
+            margin: 0;
+        }
+
+        /* ──────────── Actions ──────────── */
+        .policy-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2.2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(60, 120, 220, 0.12);
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.8rem 2.4rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            min-width: 140px;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2a7aff, #1a5adf);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(30, 90, 220, 0.30);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(30, 90, 220, 0.40);
+            background: linear-gradient(135deg, #3a8aff, #2a6aef);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.96);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: #1a3a7a;
+            border: 1px solid rgba(60, 120, 220, 0.20);
+            box-shadow: 0 4px 12px rgba(30, 60, 130, 0.06);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(40, 100, 220, 0.40);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(30, 60, 130, 0.10);
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.96);
+        }
+
+        .btn .check {
+            font-size: 1.2rem;
+        }
+
+        /* ──────────── Toast / Notification ──────────── */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(10, 42, 90, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.20);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            pointer-events: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast .toast-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ──────────── Responsive ──────────── */
+        @media (max-width: 768px) {
+          
+            .policy-card {
+                padding: 2rem 1.6rem;
+                
+            }
+
+            .home-btn {
+                top: 1.2rem;
+                left: 1.2rem;
+                padding: 0.4rem 1rem 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                gap: 0.3rem;
+            }
+
+            .home-btn .arrow {
+                font-size: 1rem;
+            }
+
+            .policy-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-header .icon-wrap {
+                width: 64px;
+                height: 64px;
+            }
+
+            .policy-header .icon-wrap svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .policy-body h2 {
+                font-size: 1.2rem;
+            }
+
+            .policy-body ul li {
+                font-size: 0.94rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+           
+
+            .policy-card {
+                padding: 1.6rem 1rem;
+                
+            }
+
+            .home-btn {
+                top: 0.9rem;
+                left: 0.9rem;
+                padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+                font-size: 0.7rem;
+                gap: 0.25rem;
+                border-radius: 40px;
+            }
+
+            .home-btn .arrow {
+                font-size: 0.9rem;
+            }
+
+            .policy-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .policy-header .sub {
+                font-size: 0.9rem;
+            }
+
+            .policy-header .icon-wrap {
+                width: 56px;
+                height: 56px;
+            }
+
+            .policy-header .icon-wrap svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .policy-body h2 {
+                font-size: 1.1rem;
+            }
+
+            .policy-body p,
+            .policy-body ul li {
+                font-size: 0.92rem;
+            }
+
+            .policy-body ul li {
+                padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+            }
+
+            .policy-body .highlight-box {
+                padding: 1rem 1.2rem;
+            }
+
+            .policy-actions {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.7rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.75rem 1.2rem;
+                min-width: unset;
+                font-size: 0.95rem;
+            }
+
+            .toast {
+                width: calc(100% - 1.2rem);
+                bottom: 1rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                border-radius: 40px;
+                justify-content: center;
+                white-space: normal;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .policy-card {
+                padding: 1.2rem 0.8rem;
+    
+            }
+
+            .home-btn {
+                top: 0.6rem;
+                left: 0.6rem;
+                padding: 0.2rem 0.6rem 0.2rem 0.5rem;
+                font-size: 0.65rem;
+            }
+
+            .policy-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .policy-header .icon-wrap {
+                width: 48px;
+                height: 48px;
+            }
+
+            .policy-header .icon-wrap svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .policy-body h2 {
+                font-size: 1rem;
+            }
+
+            .policy-body p,
+            .policy-body ul li {
+                font-size: 0.85rem;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* ──────────── Smooth scroll ──────────── */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── TOAST ─── -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Preference saved</span>
+    </div>
+
+    <!-- ─── FULL‑WIDTH CARD ─── -->
+    <div class="policy-card" role="main">
+
+        <!-- Home Button (top-left) -->
+        <a href="index.html" class="home-btn" id="homeBtn" aria-label="Go to homepage">
+            <span class="arrow">  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>Home</span>
+        </a>
+
+        <!-- Content -->
+        <div class="policy-content">
+
+            <!-- Header -->
+            <div class="policy-header">
+                <div class="icon-wrap">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-3-3zm0 2a1 1 0 0 1 1 1v1h-2V5a1 1 0 0 1 1-1zm-1 7a1 1 0 0 1 2 0v3a1 1 0 0 1-2 0v-3z"/>
+                    </svg>
+                </div>
+                <h1>Cookie Policy</h1>
+                <p class="sub">We value your privacy &amp; transparency</p>
+            </div>
+
+            <!-- Body -->
+            <div class="policy-body">
+
+                <div class="last-updated">
+                    Last updated: <strong id="updateDate">July 5, 2026</strong>
+                </div>
+
+                <p>
+                    This Cookie Policy explains how we use cookies and similar technologies
+                    to recognise you when you visit our website. It explains what these
+                    technologies are and why we use them, as well as your rights to control
+                    our use of them.
+                </p>
+
+                <h2>
+                    What are cookies?
+                    <span class="badge">essential</span>
+                </h2>
+                <p>
+                    Cookies are small data files that are placed on your computer or mobile
+                    device when you visit a website. They are widely used to make websites
+                    work more efficiently and provide reporting information.
+                </p>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>🔹 We use cookies to:</strong> enhance your browsing experience,
+                        remember your preferences, and help us understand how you interact with
+                        our content.
+                    </p>
+                </div>
+
+                <h2>Types of cookies we use</h2>
+                <ul>
+                    <li>
+                        <span class="li-icon">▸</span>
+                        <span><strong>Strictly Necessary:</strong> These are required for the
+                        website to function properly (e.g., security, authentication).</span>
+                    </li>
+                    <li>
+                        <span class="li-icon">▸</span>
+                        <span><strong>Performance &amp; Analytics:</strong> Help us understand
+                        how visitors interact with our site (e.g., page views, load times).</span>
+                    </li>
+                    <li>
+                        <span class="li-icon">▸</span>
+                        <span><strong>Functional:</strong> Remember your preferences and settings
+                        to improve your experience.</span>
+                    </li>
+                    <li>
+                        <span class="li-icon">▸</span>
+                        <span><strong>Targeting / Advertising:</strong> Used to deliver relevant
+                        content and measure the effectiveness of campaigns.</span>
+                    </li>
+                </ul>
+
+                <h2>Your choices</h2>
+                <p>
+                    You can manage your cookie preferences at any time by clicking the
+                    buttons below. You can also adjust your browser settings to block or
+                    delete cookies, though this may affect certain features of the site.
+                </p>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="policy-actions">
+                <button class="btn btn-primary" id="acceptBtn">
+                    <span class="check">✓</span> Accept All
+                </button>
+                <button class="btn btn-secondary" id="declineBtn">
+                    Decline Optional
+                </button>
+                <button class="btn btn-secondary" id="preferencesBtn">
+                    ⚙️ Preferences
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ─── DOM refs ───
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            const acceptBtn = document.getElementById('acceptBtn');
+            const declineBtn = document.getElementById('declineBtn');
+            const prefsBtn = document.getElementById('preferencesBtn');
+            const homeBtn = document.getElementById('homeBtn');
+            
+
+            let toastTimer = null;
+
+            // ─── Toast helper ───
+            function showToast(message, icon = '✓') {
+                if (toastTimer) {
+                    clearTimeout(toastTimer);
+                    toast.classList.remove('show');
+                }
+
+                // force reflow for smooth re‑trigger
+                void toast.offsetWidth;
+
+                toastMsg.textContent = message;
+                const iconEl = toast.querySelector('.toast-icon');
+                if (iconEl) iconEl.textContent = icon;
+
+                toast.classList.add('show');
+
+                toastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                    toastTimer = null;
+                }, 2800);
+            }
+
+            // ─── Action handlers ───
+            function handleAccept() {
+                showToast('All cookies accepted! 🍪', '✓');
+            }
+
+            function handleDecline() {
+                showToast('Optional cookies declined.', '✕');
+            }
+
+            function handlePreferences() {
+                showToast('Open preferences panel (demo)', '⚙️');
+            }
+
+            function handleHome() {
+                window.location.href = 'index.html';
+            }
+
+            // ─── Attach events ───
+            acceptBtn.addEventListener('click', handleAccept);
+            declineBtn.addEventListener('click', handleDecline);
+            prefsBtn.addEventListener('click', handlePreferences);
+            homeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleHome();
+            });
+
+            // ─── Set dynamic date ───
+            const dateEl = document.getElementById('updateDate');
+            if (dateEl) {
+                const now = new Date();
+                const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                const day = now.getDate();
+                const month = months[now.getMonth()];
+                const year = now.getFullYear();
+                dateEl.textContent = `${month} ${day}, ${year}`;
+            }
+
+            // ─── Keyboard: ESC dismisses toast ───
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                    if (toastTimer) {
+                        clearTimeout(toastTimer);
+                        toastTimer = null;
+                    }
+                }
+            });
+
+            console.log('🍪 Cookie Policy – full width, fully responsive.');
+        })();
+    </script>
+
+</body>
+</html>
