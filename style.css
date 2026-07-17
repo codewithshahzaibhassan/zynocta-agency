@@ -2,7 +2,7 @@
   /* Fonts */
   --font-main: "Montserrat", sans-serif;
   --font-paragraph: "Inter", sans-serif;
-
+  --font-heading: "Syne", sans-serif;
   /* Font Sizes */
   --fs-12: 12px;
   --fs-14: 14px;
@@ -261,11 +261,12 @@ nav .logo img {
 .nav-item ul li a {
   text-decoration: none;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--fs-16);
   padding: var(--sp-5) 0;
   position: relative;
   transition: all 0.3s ease;
+  font-family:"Syne", sans-serif; 
 }
 
 .nav-item ul li a::after {
@@ -384,6 +385,7 @@ nav .bar-chart {
   position: relative;
   padding: var(--sp-10) 0;
   transition: color 0.3s;
+    font-family:"Syne", sans-serif; 
 }
 
 /* Hover underline effect */
@@ -435,16 +437,16 @@ nav .bar-chart {
 /* Hero content */
 .hero-content {
   color: #fff;
-  max-width: 700px;
+  max-width: 900px;
   padding: var(--sp-20);
   z-index: 1;
 }
 
 .hero-content h1 {
   font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: var(--sp-25);
-  font-family: var(--font-main);
+  margin-bottom: var(--sp-30);
+  font-weight: 750;
+  font-family: var(--font-heading);
 }
 
 .hero-content p {
@@ -506,6 +508,7 @@ nav .bar-chart {
 }
 
 .main-about h2 {
+    font-family: var(--font-heading);
   font-size: 2.5rem;
   margin-bottom: var(--sp-15);
   background-image: var(--gradient-heading);
@@ -613,6 +616,7 @@ nav .bar-chart {
 }
 
 .services .service-heading h1 {
+  font-family: var(--font-heading);
   font-size: 2.4rem;
   margin: var(--sp-15) 0;
   width: fit-content;
@@ -786,6 +790,7 @@ nav .bar-chart {
   font-size: 2.5rem;
   color: #1f3c4d;
   margin-bottom: var(--sp-20);
+  font-family: var(--font-heading);
 }
 
 .why-left p {
@@ -903,6 +908,7 @@ nav .bar-chart {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-family: var(--font-heading);
 }
 
 /* --- Slider Logic --- */
@@ -1037,6 +1043,7 @@ nav .bar-chart {
 }
 
 .heading {
+  font-family: var(--font-heading);
   font-size: 2.75rem;
   font-weight: 800;
   background-image: var(--gradient-heading);
@@ -1199,8 +1206,6 @@ hr {
   padding: 40px;
 }
 
-
-
 /* ===== OVERLAY DESIGN ===== */
 .overlay {
   position: absolute;
@@ -1222,7 +1227,8 @@ hr {
 
 /* ===== TEXT ===== */
 .overlay h2 {
-  font-size: 1.9rem;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 18px;
   line-height: 1.2;
@@ -1270,6 +1276,7 @@ hr {
   margin-bottom: 30px;
 }
 .form-header h2 {
+    font-family:"Syne", sans-serif; 
   font-size: 1.8rem;
   color: var(--text-dark);
   margin-bottom: 8px;
@@ -1382,9 +1389,9 @@ button:active {
 
 /* ===== LOGO ===== */
 .footer-logo {
- width: 200px;
- margin: 0 0 20px;
- cursor: pointer;
+  width: 200px;
+  margin: 0 0 20px;
+  cursor: pointer;
 }
 
 /* ===== TEXT ===== */
@@ -1518,172 +1525,174 @@ button:active {
 /* modal section style  */
 
 .modal-overlay * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family:var(--font-main);
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
 }
 
 /* Page Background with soft colors to highlight the glass effect */
 .modal-overlay {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #76a6ee56 0%, #2e37464b 100%);
-    backdrop-filter: blur(8px) saturate(120%);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-    opacity: 0;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #76a6ee56 0%, #2e37464b 100%);
+  backdrop-filter: blur(8px) saturate(120%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  opacity: 0;
 }
-.error-message{
-    font-size: 0.85rem;
-    color:rgb(156, 131, 50);
-    margin-top: 1px;
-    display: none;
+.error-message {
+  font-size: 0.85rem;
+  color: rgb(156, 131, 50);
+  margin-top: 1px;
+  display: none;
 }
-.active{
-    display: flex;
-    opacity: 1;
+.active {
+  display: flex;
+  opacity: 1;
 }
 /* --- LIGHT GLASS CONTAINER --- */
 .modal-container {
-    background: rgba(255, 255, 255, 0.678); /* High transparency white */
-    backdrop-filter: blur(15px) saturate(150%); /* Premium Frosted Glass */
-    -webkit-backdrop-filter: blur(15px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Soft white border */
-    border-radius: 28px;
-    width: 100%;
-    max-width: 580px;
-    padding: 45px;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); /* Very soft shadow */
+  background: rgba(255, 255, 255, 0.678); /* High transparency white */
+  backdrop-filter: blur(15px) saturate(150%); /* Premium Frosted Glass */
+  -webkit-backdrop-filter: blur(15px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Soft white border */
+  border-radius: 28px;
+  width: 100%;
+  max-width: 580px;
+  padding: 45px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); /* Very soft shadow */
 }
 
 /* Close Icon */
 .modal-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 22px;
-    cursor: pointer;
-    color: #444;
-    transition: all 0.2s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s ease;
 }
 
 .modal-close-btn:hover {
-    background: #fff;
-    transform: rotate(90deg);
+  background: #fff;
+  transform: rotate(90deg);
 }
 
 /* Typography */
 .modal-header {
-    text-align: center;
-    margin-bottom: 35px;
+  text-align: center;
+  margin-bottom: 35px;
 }
 
 .modal-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
 }
 
 .modal-subtitle {
-    color: #666;
-    font-size: 15px;
-    margin-top: 8px;
+  color: #666;
+  font-size: 15px;
+  margin-top: 8px;
 }
 
 /* Form Elements */
 .modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .modal-row {
-    display: flex;
-    gap: 18px;
+  display: flex;
+  gap: 18px;
 }
 
 .modal-field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .modal-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #444;
-    margin-left: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-left: 4px;
 }
 
 /* Input Fields - Modern Look */
-.modal-input, .modal-select, .modal-textarea {
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 14px;
-    padding: 14px 18px;
-    font-size: 15px;
-    color: #222;
-    outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.modal-input,
+.modal-select,
+.modal-textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #222;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input::placeholder {
-    color: #999;
+  color: #999;
 }
 
-.modal-input:focus, .modal-textarea:focus {
-    background: #fff;
-    border-color: #000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.modal-input:focus,
+.modal-textarea:focus {
+  background: #fff;
+  border-color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Modern Gradient Button */
 .modal-submit-btn {
-    margin-top: 10px;
-    background: #000;
-    color: #fff;
-    padding: 18px;
-    border-radius: 16px;
-    border: none;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s ease;
+  margin-top: 10px;
+  background: #000;
+  color: #fff;
+  padding: 18px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
 }
 
 .modal-submit-btn:hover {
-    background: #222;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .modal-btn-arrow {
-    font-size: 20px;
-    transition: transform 0.3s ease;
+  font-size: 20px;
+  transition: transform 0.3s ease;
 }
 
 .modal-submit-btn:hover .modal-btn-arrow {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 .result {
   display: none;
