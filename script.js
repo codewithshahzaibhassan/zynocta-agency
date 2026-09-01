@@ -358,3 +358,140 @@ function initFAQAccordion() {
 
 // Initialize when DOM ready
 document.addEventListener('DOMContentLoaded', () => initFAQAccordion());
+
+// Ai chatboot 
+// ===============================
+// ZYNOCTA AI CHATBOT
+// ===============================
+
+const chatbotToggle = document.querySelector("#chatbotToggle");
+const chatbotBox = document.querySelector("#chatbotBox");
+const chatbotClose = document.querySelector("#chatbotClose");
+
+const chatbotInput = document.querySelector("#chatbotInput");
+const chatbotSend = document.querySelector("#chatbotSend");
+const chatbotMessages = document.querySelector("#chatbotMessages");
+
+
+// ===============================
+// OPEN CHATBOT
+// ===============================
+
+chatbotToggle.addEventListener("click", () => {
+  chatbotBox.classList.add("active");
+});
+
+
+// ===============================
+// CLOSE CHATBOT
+// ===============================
+
+chatbotClose.addEventListener("click", () => {
+  chatbotBox.classList.remove("active");
+});
+
+
+// ===============================
+// SEND MESSAGE
+// ===============================
+
+function sendMessage() {
+
+  const message = chatbotInput.value.trim();
+
+  if (!message) return;
+
+
+  // ===============================
+  // USER MESSAGE
+  // ===============================
+
+  const userMessage = document.createElement("div");
+
+  userMessage.classList.add("user-message");
+
+  userMessage.textContent = message;
+
+  chatbotMessages.appendChild(userMessage);
+
+
+  // Clear input
+  chatbotInput.value = "";
+
+
+  // Scroll bottom
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+
+  // ===============================
+  // TYPING INDICATOR
+  // ===============================
+
+  setTimeout(() => {
+
+    const typingMessage = document.createElement("div");
+
+    typingMessage.classList.add(
+      "bot-message",
+      "typing-message"
+    );
+
+    typingMessage.innerHTML = `
+      <div class="typing-bubble">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    `;
+
+    chatbotMessages.appendChild(typingMessage);
+
+
+    // Scroll bottom
+    chatbotMessages.scrollTop =
+      chatbotMessages.scrollHeight;
+
+
+    // ===============================
+    // BOT RESPONSE
+    // ===============================
+
+    setTimeout(() => {
+
+      typingMessage.classList.remove("typing-message");
+
+      typingMessage.innerHTML = `
+        Thanks for your message! 🚧
+        Zynocta AI is currently under development.
+        I'll be available soon!
+      `;
+
+
+      // Scroll bottom
+      chatbotMessages.scrollTop =
+        chatbotMessages.scrollHeight;
+
+    }, 2500);
+
+  }, 300);
+}
+
+
+// ===============================
+// SEND BUTTON
+// ===============================
+
+chatbotSend.addEventListener("click", sendMessage);
+
+
+// ===============================
+// ENTER KEY
+// ===============================
+
+chatbotInput.addEventListener("keydown", (e) => {
+
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+
+});
