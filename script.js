@@ -395,17 +395,14 @@ chatbotClose.addEventListener("click", () => {
 // SEND MESSAGE
 // ===============================
 
-function sendMessage() {
+async function sendMessage() {
 
   const message = chatbotInput.value.trim();
 
   if (!message) return;
 
 
-  // ===============================
-  // USER MESSAGE
-  // ===============================
-
+  // User message
   const userMessage = document.createElement("div");
 
   userMessage.classList.add("user-message");
@@ -414,66 +411,101 @@ function sendMessage() {
 
   chatbotMessages.appendChild(userMessage);
 
-
-  // Clear input
   chatbotInput.value = "";
 
+  chatbotMessages.scrollTop =
+    chatbotMessages.scrollHeight;
 
-  // Scroll bottom
-  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+  // Typing bubble
+  const typingMessage = document.createElement("div");
+
+  typingMessage.classList.add("bot-message");
+
+  typingMessage.innerHTML = `
+    <div class="typing-bubble">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  `;
+
+  chatbotMessages.appendChild(typingMessage);
+
+  chatbotMessages.scrollTop =
+    chatbotMessages.scrollHeight;
 
 
   // ===============================
-  // TYPING INDICATOR
+  // REAL AI REQUEST
   // ===============================
 
-  setTimeout(() => {
+  try {
 
-    const typingMessage = document.createElement("div");
+    const response = await fetch("/api/chat", {
 
-    typingMessage.classList.add(
-      "bot-message",
-      "typing-message"
-    );
+      method: "POST",
 
-    typingMessage.innerHTML = `
-      <div class="typing-bubble">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    `;
+      headers: {
+        "Content-Type": "application/json"
+      },
 
-    chatbotMessages.appendChild(typingMessage);
+      body: JSON.stringify({
+        message: message
+      })
+
+    });
 
 
-    // Scroll bottom
+    const data = await response.json();
+
+
+    // Remove typing dots
+    typingMessage.remove();
+
+
+    // AI response
+    const botMessage = document.createElement("div");
+
+    botMessage.classList.add("bot-message");
+
+    if (response.ok) {
+
+      botMessage.textContent =
+        data.reply;
+
+    } else {
+
+      botMessage.textContent =
+        "Sorry! Something went wrong.";
+
+      console.error(data);
+
+    }
+
+    chatbotMessages.appendChild(botMessage);
+
     chatbotMessages.scrollTop =
       chatbotMessages.scrollHeight;
 
 
-    // ===============================
-    // BOT RESPONSE
-    // ===============================
+  } catch (error) {
 
-    setTimeout(() => {
+    typingMessage.remove();
 
-      typingMessage.classList.remove("typing-message");
+    const errorMessage = document.createElement("div");
 
-      typingMessage.innerHTML = `
-        Thanks for your message! 🚧
-        Zynocta AI is currently under development.
-        I'll be available soon!
-      `;
+    errorMessage.classList.add("bot-message");
 
+    errorMessage.textContent =
+      "Sorry! I couldn't connect to the AI.";
 
-      // Scroll bottom
-      chatbotMessages.scrollTop =
-        chatbotMessages.scrollHeight;
+    chatbotMessages.appendChild(errorMessage);
 
-    }, 2500);
+    console.error("Chatbot Error:", error);
 
-  }, 300);
+  }
+
 }
 
 
