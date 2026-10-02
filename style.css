@@ -188,183 +188,731 @@ body {
   min-height: 100vh;
 }
 
+/* intro  */
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    background: #f7f9ff;
+
+    color: #10152b;
+}
+
+
+/* =========================================
+   WELCOME SCREEN
+========================================= */
+
+.welcome-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        rgba(248, 250, 255, .72);
+
+    backdrop-filter: blur(22px);
+
+    -webkit-backdrop-filter: blur(22px);
+
+    animation:
+        screenFadeIn .7s ease forwards;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.light-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(51, 180, 255, .35),
+            rgba(108, 91, 255, .28),
+            rgba(196, 108, 255, .25)
+        );
+
+    filter: blur(110px);
+
+    opacity: .65;
+
+    animation:
+        glowMove 6s ease-in-out infinite alternate;
+}
+
+
+.light-glow::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -350px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(244, 194, 82, .3);
+
+    filter: blur(100px);
+}
+
+
+@keyframes glowMove {
+
+    from {
+        transform:
+            translate(-150px, -70px)
+            scale(.9);
+    }
+
+    to {
+        transform:
+            translate(150px, 70px)
+            scale(1.15);
+    }
+
+}
+
+
+/* =========================================
+   GLASS ORBS
+========================================= */
+
+.orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.8);
+
+    background:
+        rgba(255,255,255,.28);
+
+    box-shadow:
+        0 20px 60px
+        rgba(75, 95, 180, .08);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.orb-one {
+
+    width: 170px;
+    height: 170px;
+
+    top: 10%;
+    left: 10%;
+}
+
+
+.orb-two {
+
+    width: 230px;
+    height: 230px;
+
+    right: 7%;
+    bottom: 8%;
+}
+
+
+/* =========================================
+   WELCOME CONTENT
+========================================= */
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 90%);
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.75);
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.829),
+            rgba(255, 255, 255, 0.603)
+        );
+
+    backdrop-filter:
+        blur(30px);
+
+    -webkit-backdrop-filter:
+        blur(30px);
+
+    /* box-shadow:
+        0 30px 90px
+        rgba(60, 75, 150, .12),
+
+        inset 0 1px 0
+        rgba(255,255,255,.95); */
+
+    animation:
+        contentIn .8s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+@keyframes contentIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.loga {
+
+    width: 82px;
+    height: 82px;
+
+    object-fit: contain;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(
+            0 10px 25px
+            rgba(65, 105, 220, .22)
+        );
+
+    animation:
+        logaFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes logaFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+}
+
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.small-label {
+
+    margin-bottom: 14px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color:
+        #7180a8;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   TYPING TEXT
+========================================= */
+
+.typing-wrapper {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.typing {
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            70px
+        );
+
+    font-weight: 750;
+
+    line-height: 1.15;
+
+    letter-spacing: -2.5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #167dcc,
+            #5a55e8,
+            #984fd0
+        );
+
+    background-size:
+        220% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 4s
+        linear infinite;
+}
+
+
+@keyframes gradientMove {
+
+    to {
+        background-position:
+            220% center;
+    }
+
+}
+
+
+/* =========================================
+   TYPING CURSOR
+========================================= */
+
+.cursor {
+
+    display: inline-block;
+
+    width: 3px;
+
+    height: 58px;
+
+    margin-left: 8px;
+
+    vertical-align: middle;
+
+    border-radius: 10px;
+
+    background:
+        #5d63e9;
+
+    box-shadow:
+        0 0 12px
+        rgba(91, 99, 230, .35);
+
+    animation:
+        cursorBlink .7s infinite;
+}
+
+
+@keyframes cursorBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+
+    max-width: 650px;
+
+    margin:
+        22px auto 0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color:
+        #68718c;
+
+    opacity: 0;
+
+    animation:
+        descriptionIn .8s
+        ease forwards;
+
+    animation-delay:
+        1.2s;
+}
+
+
+@keyframes descriptionIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   GOLD LINE
+========================================= */
+
+.gold-line {
+
+    width: 55px;
+    height: 2px;
+
+    margin:
+        25px auto 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d7ae45,
+            transparent
+        );
+
+    opacity: 0;
+
+    animation:
+        lineIn .7s
+        ease forwards;
+
+    animation-delay:
+        1.4s;
+}
+
+
+@keyframes lineIn {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   LOADING DOTS
+========================================= */
+
+.loading {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    opacity: 0;
+
+    animation:
+        loadingIn .5s
+        ease forwards;
+
+    animation-delay:
+        1.6s;
+}
+
+
+.loading span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        #6572e8;
+
+    animation:
+        dotPulse 1s infinite;
+}
+
+
+.loading span:nth-child(2) {
+    animation-delay: .15s;
+}
+
+
+.loading span:nth-child(3) {
+    animation-delay: .3s;
+}
+
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        opacity: .25;
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+@keyframes loadingIn {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   SLIDE TO TOP
+========================================= */
+
+.welcome-screen.exit {
+
+    animation:
+        slideUp .7s
+        cubic-bezier(.76,0,.24,1)
+        forwards;
+}
+
+
+@keyframes slideUp {
+
+    from {
+        transform:
+            translateY(0);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-100%);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   WEBSITE CONTENT
+========================================= */
+
+.website-content {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        #f7f9ff;
+}
+
+
+.website-content h2 {
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+
+.website-content p {
+
+    color:
+        #737b92;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .welcome-content {
+
+        width: 92%;
+
+        padding:
+            40px 22px;
+
+        border-radius: 25px;
+    }
+
+
+    .loga {
+
+        width: 68px;
+        height: 68px;
+    }
+
+
+    .small-label {
+
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .typing {
+
+        font-size: 34px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .cursor {
+
+        height: 36px;
+
+        margin-left: 5px;
+    }
+
+
+    .description {
+
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+
+    .orb-one {
+
+        width: 100px;
+        height: 100px;
+
+        top: 8%;
+        left: -30px;
+    }
+
+
+    .orb-two {
+
+        width: 140px;
+        height: 140px;
+
+        right: -50px;
+        bottom: 5%;
+    }
+
+}
+
 /* =========================
    AI CHATBOT
 ========================= */
 
-.chatbot {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  z-index: 9999;
-  font-family: Arial, sans-serif;
-}
-
-.chatbot-toggle {
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 50%;
-  background: #2563eb;
-  color: #fff;
-  font-size: 25px;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.chatbot-box {
-  position: absolute;
-  right: 0;
-  bottom: 75px;
-
-  width: 350px;
-  height: 500px;
-
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-
-  display: none;
-  flex-direction: column;
-}
-
-.chatbot-box.active {
-  display: flex;
-}
-
-.chatbot-header {
-  padding: 18px;
-  background: #2563eb;
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.chatbot-header h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.chatbot-header span {
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-.chatbot-header button {
-  border: none;
-  background: transparent;
-  color: #fff;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.chatbot-messages {
-  flex: 1;
-  padding: 18px;
-  overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.bot-message,
-.user-message {
-  max-width: 80%;
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.bot-message {
-  align-self: flex-start;
-  background: #f1f5f9;
-  color: #1e293b;
-}
-
-.user-message {
-  align-self: flex-end;
-  background: #2563eb;
-  color: #fff;
-}
-
-.chatbot-input {
-  display: flex;
-  padding: 12px;
-  border-top: 1px solid #e5e7eb;
-  gap: 8px;
-}
-
-.chatbot-input input {
-  flex: 1;
-  border: 1px solid #ddd;
-  outline: none;
-  padding: 11px 13px;
-  border-radius: 10px;
-}
-
-.chatbot-input button {
-  width: 42px;
-  border: none;
-  border-radius: 10px;
-  background: #2563eb;
-  color: #fff;
-  cursor: pointer;
-}
-
-@media (max-width: 500px) {
-
-  .chatbot {
-    right: 15px;
-    bottom: 15px;
-  }
-
-  .chatbot-box {
-    width: calc(100vw - 30px);
-    height: 70vh;
-  }
-
-}
-
-.typing-bubble {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  width: fit-content;
-}
-
-.typing-bubble span {
-  width: 6px;
-  height: 6px;
-  background: #64748b;
-  border-radius: 50%;
-  animation: typing 0.8s infinite ease-in-out;
-}
-
-.typing-bubble span:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.typing-bubble span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-@keyframes typing {
-  0%,
-  60%,
-  100% {
-    transform: translateY(0);
-  }
-
-  30% {
-    transform: translateY(-5px);
-  }
-}
 
 /* Header / Navbar */
 /* Base transparent navbar */

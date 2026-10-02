@@ -59,7 +59,68 @@ AOS.init({
   easing: "ease-out-cubic",
   offset: 100,
 });
+// intro logic
+/* =========================================
+   ELEMENTS
+========================================= */
 
+const typingText =
+    document.getElementById("typingText");
+
+const welcomeScreen =
+    document.getElementById("welcomeScreen");
+
+
+/* =========================================
+   TYPING TEXT
+========================================= */
+
+const text = "Welcome at Zynocta";
+
+let index = 0;
+
+
+/* =========================================
+   TYPE EFFECT
+========================================= */
+
+function typeText() {
+
+    if (index < text.length) {
+
+        typingText.textContent +=
+            text.charAt(index);
+
+        index++;
+
+        setTimeout(
+            typeText,
+            80
+        );
+    }
+}
+
+
+  //  START TYPING
+
+setTimeout(
+    typeText,
+    450
+);
+
+  //  SLIDE UP AFTER 3 SECONDS
+
+setTimeout(() => {
+
+    welcomeScreen.classList.add("exit");
+
+}, 3700);
+  //  REMOVE SCREEN AFTER ANIMATION
+setTimeout(() => {
+
+    welcomeScreen.remove();
+
+}, 4000);
 // Animated progress bars + % counter (one-time)
 const spans = document.querySelectorAll(".progress span");
 let animationDone = false;
