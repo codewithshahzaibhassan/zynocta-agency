@@ -848,6 +848,9 @@ font-family:var(--font-heading);
 
         border-radius: 25px;
     }
+    #typingText{
+  font-size: 2rem;
+}
 
 
     .loga {
