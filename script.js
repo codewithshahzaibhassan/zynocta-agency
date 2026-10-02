@@ -66,9 +66,9 @@ AOS.init({
 
 const typingText =
     document.getElementById("typingText");
-
 const welcomeScreen =
     document.getElementById("welcomeScreen");
+   
 
 
 /* =========================================
@@ -76,7 +76,6 @@ const welcomeScreen =
 ========================================= */
 
 const text = "Welcome at Zynocta";
-
 let index = 0;
 
 
@@ -105,7 +104,7 @@ function typeText() {
 
 setTimeout(
     typeText,
-    450
+    350
 );
 
   //  SLIDE UP AFTER 3 SECONDS
@@ -114,13 +113,13 @@ setTimeout(() => {
 
     welcomeScreen.classList.add("exit");
 
-}, 3700);
+}, 2800);
   //  REMOVE SCREEN AFTER ANIMATION
 setTimeout(() => {
 
     welcomeScreen.remove();
 
-}, 4000);
+}, 3300);
 // Animated progress bars + % counter (one-time)
 const spans = document.querySelectorAll(".progress span");
 let animationDone = false;
@@ -419,172 +418,3 @@ function initFAQAccordion() {
 
 // Initialize when DOM ready
 document.addEventListener('DOMContentLoaded', () => initFAQAccordion());
-
-// Ai chatboot 
-// ===============================
-// ZYNOCTA AI CHATBOT
-// ===============================
-
-const chatbotToggle = document.querySelector("#chatbotToggle");
-const chatbotBox = document.querySelector("#chatbotBox");
-const chatbotClose = document.querySelector("#chatbotClose");
-
-const chatbotInput = document.querySelector("#chatbotInput");
-const chatbotSend = document.querySelector("#chatbotSend");
-const chatbotMessages = document.querySelector("#chatbotMessages");
-
-
-// ===============================
-// OPEN CHATBOT
-// ===============================
-
-chatbotToggle.addEventListener("click", () => {
-  chatbotBox.classList.add("active");
-});
-
-
-// ===============================
-// CLOSE CHATBOT
-// ===============================
-
-chatbotClose.addEventListener("click", () => {
-  chatbotBox.classList.remove("active");
-});
-
-
-// ===============================
-// SEND MESSAGE
-// ===============================
-
-async function sendMessage() {
-
-  const message = chatbotInput.value.trim();
-
-  if (!message) return;
-
-
-  // User message
-  const userMessage = document.createElement("div");
-
-  userMessage.classList.add("user-message");
-
-  userMessage.textContent = message;
-
-  chatbotMessages.appendChild(userMessage);
-
-  chatbotInput.value = "";
-
-  chatbotMessages.scrollTop =
-    chatbotMessages.scrollHeight;
-
-
-  // Typing bubble
-  const typingMessage = document.createElement("div");
-
-  typingMessage.classList.add("bot-message");
-
-  typingMessage.innerHTML = `
-    <div class="typing-bubble">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  `;
-
-  chatbotMessages.appendChild(typingMessage);
-
-  chatbotMessages.scrollTop =
-    chatbotMessages.scrollHeight;
-
-
-  // ===============================
-  // REAL AI REQUEST
-  // ===============================
-
-  try {
-
-    const response = await fetch("/api/chat", {
-
-      method: "POST",
-
-      headers: {
-        "Content-Type": "application/json"
-      },
-
-      body: JSON.stringify({
-        message: message
-      })
-
-    });
-
-
-    const data = await response.json();
-
-
-    // Remove typing dots
-    typingMessage.remove();
-
-
-    // AI response
-    const botMessage = document.createElement("div");
-
-    botMessage.classList.add("bot-message");
-
-    if (response.ok) {
-
-      botMessage.textContent =
-        data.reply;
-
-    } else {
-
-      botMessage.textContent =
-        "Sorry! Something went wrong.";
-
-      console.error(data);
-
-    }
-
-    chatbotMessages.appendChild(botMessage);
-
-    chatbotMessages.scrollTop =
-      chatbotMessages.scrollHeight;
-
-
-  } catch (error) {
-
-    typingMessage.remove();
-
-    const errorMessage = document.createElement("div");
-
-    errorMessage.classList.add("bot-message");
-
-    errorMessage.textContent =
-      "Sorry! I couldn't connect to the AI.";
-
-    chatbotMessages.appendChild(errorMessage);
-
-    console.error("Chatbot Error:", error);
-
-  }
-
-}
-
-
-// ===============================
-// SEND BUTTON
-// ===============================
-
-chatbotSend.addEventListener("click", sendMessage);
-
-
-// ===============================
-// ENTER KEY
-// ===============================
-
-chatbotInput.addEventListener("keydown", (e) => {
-
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-
-});
