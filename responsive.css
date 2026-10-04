@@ -187,12 +187,6 @@
   .service-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
 }
 @media (max-width: 500px) {
   .counter-container {

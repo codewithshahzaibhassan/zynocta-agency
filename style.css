@@ -1149,7 +1149,7 @@ nav .bar-chart {
   position: relative;
   z-index: 5;
 
-  width: min(1400px, 92%);
+  width: min(140  0px, 92%);
   min-height: 780px;
 
   margin: auto;
@@ -2194,7 +2194,6 @@ nav .bar-chart {
   .zynocta-hero {
     min-height: auto;
   }
-
   .hero-container {
     width: 92%;
 
@@ -2285,16 +2284,30 @@ nav .bar-chart {
    SMALL MOBILE
 ========================================= */
 
+@media (max-width: 560px) {
+.hero-content h1 span { 
+  font-size: 1.2em;
+  display: inline;
+}
+}
+@media (max-width: 470px) {
+.hero-content h1 span { 
+  font-size: 0.9em;
+  display: inline;
+}
+}
 @media (max-width: 430px) {
-
+.hero-content h1 span { 
+  font-size: 1.1em;
+  display: block;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+}
   .hero-visual {
     transform: scale(0.58);
 
     margin: -100px -115px;
-  }
-
-  .hero-content h1 {
-    font-size: 39px;
   }
 
   .hero-badge {
