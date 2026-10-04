@@ -1149,7 +1149,7 @@ nav .bar-chart {
   position: relative;
   z-index: 5;
 
-  width: min(140  0px, 92%);
+  width: min(1400px, 92%);
   min-height: 780px;
 
   margin: auto;
